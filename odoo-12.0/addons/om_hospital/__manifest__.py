@@ -1,0 +1,15 @@
+{
+    'name': 'Hospital Management',
+    'version': '12.0.1.0.0',
+    'category': 'Extra Tools',
+    'summary': 'Module for managing the Hospitals',
+    'sequence': '10',
+    'author': 'Samy Mostafa Shaawat',
+    'maintainer': 'Samy Mostafa Shaawat',
+    'website': 'https://samy.rowad.com/',
+    'depends': ['base', 'website'],
+    'demo': [],
+    'data': [],
+    'installable': True,
+    'application': True,
+}
