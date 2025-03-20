@@ -9,7 +9,9 @@
     'website': 'https://samy.rowad.com/',
     'depends': ['base', 'website'],
     'demo': [],
-    'data': [],
+    'data': [
+        'views/patient.xml'
+    ],
     'installable': True,
     'application': True,
 }
