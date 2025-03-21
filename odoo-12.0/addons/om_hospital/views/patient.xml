@@ -24,6 +24,7 @@
                     <group>
                         <group>
                             <field name="patient_name"/>
+                            <field name="name"/>
                         </group>
                         <group>
                             <field name="patient_age"/>
