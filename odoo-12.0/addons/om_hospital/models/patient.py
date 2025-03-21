@@ -10,7 +10,7 @@ class HospitalPatient(models.Model):
     patient_age = fields.Integer('Age')
     notes = fields.Text(string="Notes")
     image = fields.Binary(string="Image")
-    name = fields.Char(string="Test")
+    name = fields.Char(string="Name")
 
 
 
