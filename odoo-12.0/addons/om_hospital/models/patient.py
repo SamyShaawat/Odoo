@@ -3,6 +3,12 @@
 from odoo import models, fields, api, _
 
 
+# Inheriting the Sale Order Model and Adding New Field
+class SaleOrderInherit(models.Model):
+    _inherit = "sale.order"
+    patient_name = fields.Char(string="Patient Name")
+
+
 class HospitalPatient(models.Model):
     _name = "hospital.patient"
     _inherit = ["mail.thread", "mail.activity.mixin"]
