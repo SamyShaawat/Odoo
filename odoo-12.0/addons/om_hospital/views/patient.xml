@@ -7,9 +7,10 @@
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <tree string="Patients">
-                    <field name="patient_name"/>
-                    <field name="patient_age"/>
-                    <field name="notes"/>
+                <field name="name_seq"/>
+                <field name="patient_name"/>
+                <field name="patient_age"/>
+                <field name="notes"/>
             </tree>
         </field>
     </record>
@@ -21,6 +22,11 @@
         <field name="arch" type="xml">
             <form string="Patients">
                 <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name_seq"/>
+                        </h1>
+                    </div>
                     <group>
                         <group>
                             <field name="patient_name"/>
@@ -31,8 +37,8 @@
                         </group>
                     </group>
                     <group>
-                    <field name="notes"/>
-                    <field name="image"/>
+                        <field name="notes"/>
+                        <field name="image"/>
                     </group>
                 </sheet>
                 <div class="oe_chatter">
@@ -53,9 +59,9 @@
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
-          <p class="o_view_nocontent_smiling_face">
-            Create your First Patient !
-          </p>
+            <p class="o_view_nocontent_smiling_face">
+                Create your First Patient !
+            </p>
         </field>
     </record>
 
