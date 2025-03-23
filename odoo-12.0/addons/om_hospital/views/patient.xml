@@ -34,6 +34,8 @@
                         </group>
                         <group>
                             <field name="patient_age"/>
+                            <field name="new_name"/>
+                            <field name="sale_order_count" force_save="1"/>
                         </group>
                     </group>
                     <group>

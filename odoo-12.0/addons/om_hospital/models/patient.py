@@ -28,6 +28,18 @@ class HospitalPatient(models.Model):
         index=True,
         default=lambda self: _("New"),
     )
+    new_name = fields.Many2one(comodel_name="res.partner", string="New Name")
+
+    sale_order_count = fields.Integer(string="No. of Sale Orders", readonly=True)
+
+    @api.onchange("new_name")
+    def _onchange_new_name(self):
+        if self.new_name:
+            self.sale_order_count = self.env["sale.order"].search_count(
+                [("partner_id", "=", self.new_name.id)]
+            )
+        else:
+            self.sale_order_count = 0
 
     # Overriding the create method to assign sequence for the record
     @api.model
