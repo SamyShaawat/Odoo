@@ -10,6 +10,7 @@
                 <field name="name_seq"/>
                 <field name="patient_name"/>
                 <field name="patient_age"/>
+                <field name="gender"/>
                 <field name="notes"/>
             </tree>
         </field>
@@ -31,6 +32,7 @@
                         <group>
                             <field name="patient_name"/>
                             <field name="name"/>
+                            <field name="gender"/>
                         </group>
                         <group>
                             <field name="patient_age"/>
@@ -49,6 +51,25 @@
                     <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
                 </div>
             </form>
+        </field>
+    </record>
+
+    <!--search view for the patient-->
+    <record id="hospital_patient_search" model="ir.ui.view">
+        <field name="name">hospital.patient.search</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <search string="Search Patients">
+                <field name="name" filter_domain="['|',('patient_name', 'ilike', self),('name_seq', 'ilike', self)]"/>
+                <field name="name_seq"/>
+                <field name="patient_name"/>
+                <separator/>
+                <filter string="Male" name="male" domain="[('gender', '=', 'male')]"/>
+                <filter string="Female" name="female" domain="[('gender', '=', 'fe_male')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Gender" name="gender" context="{'group_by':'gender'}"/>
+                </group>
+            </search>
         </field>
     </record>
 

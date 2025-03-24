@@ -28,6 +28,14 @@ class HospitalPatient(models.Model):
         index=True,
         default=lambda self: _("New"),
     )
+    gender = fields.Selection(
+        [
+            ("male", "Male"),
+            ("fe_male", "Female"),
+        ],
+        default="male",
+        string="Gender",
+    )
     new_name = fields.Many2one(comodel_name="res.partner", string="New Name")
 
     sale_order_count = fields.Integer(string="No. of Sale Orders", readonly=True)
