@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 
 
 # Inheriting the Sale Order Model and Adding New Field
@@ -44,6 +45,13 @@ class HospitalPatient(models.Model):
                     rec.age_group = "minor"
                 else:
                     rec.age_group = "major"
+
+    # Add Constrains For a Field
+    @api.constrains("patient_age")
+    def check_age(self):
+        for rec in self:
+            if rec.patient_age <= 5:
+                raise ValidationError(_("Age must be greater than 5."))
 
     patient_name = fields.Char(string="Name", required=True, track_visibility="always")
     patient_age = fields.Integer(string="Age", track_visibility="always")
