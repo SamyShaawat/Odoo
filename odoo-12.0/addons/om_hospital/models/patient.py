@@ -45,10 +45,10 @@ class HospitalPatient(models.Model):
                 else:
                     rec.age_group = "major"
 
-    patient_name = fields.Char(string="Name", required=True)
-    patient_age = fields.Integer("Age")
-    notes = fields.Text(string="Registration Note")
-    image = fields.Binary(string="Image", attachment=True)
+    patient_name = fields.Char(string="Name", required=True, track_visibility="always")
+    patient_age = fields.Integer(string="Age", track_visibility="always")
+    notes = fields.Text(string="Registration Note", track_visibility="always")
+    image = fields.Binary(string="Image", attachment=True, track_visibility="always")
     name = fields.Char(string="Test")
     name_seq = fields.Char(
         string="Patient ID",
@@ -57,6 +57,7 @@ class HospitalPatient(models.Model):
         readonly=True,
         index=True,
         default=lambda self: _("New"),
+        track_visibility="always",
     )
     gender = fields.Selection(
         [
@@ -65,6 +66,7 @@ class HospitalPatient(models.Model):
         ],
         default="male",
         string="Gender",
+        track_visibility="always",
     )
     age_group = fields.Selection(
         [
@@ -74,8 +76,14 @@ class HospitalPatient(models.Model):
         string="Age Group",
         compute="set_age_group",
         store=True,
+        track_visibility="always",
     )
-    new_name = fields.Many2one(comodel_name="res.partner", string="New Name")
+    new_name = fields.Many2one(
+        comodel_name="res.partner", string="New Name", track_visibility="always"
+    )
     sale_order_count = fields.Integer(
-        string="No. of Sale Orders", compute="_onchange_new_name", store=True
+        string="No. of Sale Orders",
+        compute="_onchange_new_name",
+        store=True,
+        track_visibility="always",
     )
