@@ -7,8 +7,9 @@
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <tree string="Patients">
-                <field name="name_seq"/>
                 <field name="patient_name"/>
+                <field name="name_seq"/>
+                <field name="age_group"/>
                 <field name="patient_age"/>
                 <field name="gender"/>
                 <field name="notes"/>
@@ -23,26 +24,33 @@
         <field name="arch" type="xml">
             <form string="Patients">
                 <sheet>
+                    <!--                    <div class="oe_title">-->
+                    <!--                        <h1>-->
+                    <!--                            <field name="name_seq"/>-->
+                    <!--                        </h1>-->
+                    <!--                    </div>-->
+                    <field name="image" widget="image" class="oe_avatar"/>
                     <div class="oe_title">
                         <h1>
-                            <field name="name_seq"/>
+                            <field name="patient_name"/>
                         </h1>
                     </div>
                     <group>
                         <group>
-                            <field name="patient_name"/>
-                            <field name="name"/>
+                            <!--                            <field name="patient_name"/>-->
+                            <!--                            <field name="name"/>-->
+                            <field name="name_seq"/>
+                            <field name="patient_age"/>
                             <field name="gender"/>
                         </group>
                         <group>
-                            <field name="patient_age"/>
+                            <field name="age_group"/>
                             <field name="new_name"/>
                             <field name="sale_order_count" force_save="1"/>
                         </group>
                     </group>
                     <group>
                         <field name="notes"/>
-                        <field name="image"/>
                     </group>
                 </sheet>
                 <div class="oe_chatter">
