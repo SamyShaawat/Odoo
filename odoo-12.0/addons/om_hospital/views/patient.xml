@@ -9,8 +9,8 @@
             <tree string="Patients">
                 <field name="patient_name"/>
                 <field name="name_seq"/>
-                <field name="age_group"/>
                 <field name="patient_age"/>
+                <field name="age_group"/>
                 <field name="gender"/>
                 <field name="notes"/>
             </tree>

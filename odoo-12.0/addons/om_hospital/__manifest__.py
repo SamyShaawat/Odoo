@@ -13,6 +13,7 @@
         "security/ir.model.access.csv",
         "data/sequence.xml",
         "views/patient.xml",
+        "views/appointment.xml",
         "views/sale_order.xml",
     ],
     "installable": True,
