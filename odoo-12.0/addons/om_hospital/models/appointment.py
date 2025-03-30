@@ -9,6 +9,7 @@ class HospitalAppointment(models.Model):
     _name = "hospital.appointment"
     _description = "Appointment"
     _inherit = ["mail.thread", "mail.activity.mixin"]
+    _order = "appointment_date desc"
 
     # Overriding the Create Method in Odoo
     @api.model
