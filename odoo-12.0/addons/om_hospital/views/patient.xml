@@ -29,6 +29,15 @@
                     <!--                            <field name="name_seq"/>-->
                     <!--                        </h1>-->
                     <!--                    </div>-->
+
+                    <div class="oe_button_box" name="button_box">
+                        <button name="open_patient_appointments" class="oe_stat_button"
+                                type="object"
+                                icon="fa-calendar">
+                            <field string="Appointments" name="appointment_count" widget="statinfo"/>
+                        </button>
+                    </div>
+
                     <field name="image" widget="image" class="oe_avatar"/>
                     <div class="oe_title">
                         <h1>

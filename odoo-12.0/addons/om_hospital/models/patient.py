@@ -53,9 +53,31 @@ class HospitalPatient(models.Model):
             if rec.patient_age <= 5:
                 raise ValidationError(_("Age must be greater than 5."))
 
+    # Action For Smart Button
+    @api.multi
+    def open_patient_appointments(self):
+        return {
+            "name": _("Appointments"),
+            "domain": [("patient_id", "=", self.id)],
+            "view_type": "form",
+            "res_model": "hospital.appointment",
+            "view_id": False,
+            "view_mode": "tree,form",
+            "type": "ir.actions.act_window",
+        }
+
+    def get_appointment_count(self):
+        count = self.env["hospital.appointment"].search_count(
+            [("patient_id", "=", self.id)]
+        )
+        self.appointment_count = count
+
     patient_name = fields.Char(string="Name", required=True, track_visibility="always")
     patient_age = fields.Integer(string="Age", track_visibility="always")
     notes = fields.Text(string="Registration Note", track_visibility="always")
+    appointment_count = fields.Integer(
+        string="Appointment", compute="get_appointment_count"
+    )
     image = fields.Binary(string="Image", attachment=True, track_visibility="always")
     name = fields.Char(string="Test")
     name_seq = fields.Char(
