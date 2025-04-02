@@ -22,6 +22,15 @@ class HospitalAppointment(models.Model):
         result = super(HospitalAppointment, self).create(vals)
         return result
 
+    # How To Set Default Value For The Field in Odoo12
+    def _get_default_note(self):
+        # res = super(HospitalAppointment, self).default_get(fields)
+        # print("test......")
+        # res["patient_id"] = 1
+        # res["notes"] = "please like the video"
+        # return "This is a default Note for Registration you can change it as you want"
+        return 1
+
     name = fields.Char(
         string="Appointment ID",
         required=True,
@@ -31,7 +40,9 @@ class HospitalAppointment(models.Model):
         default=lambda self: _("New"),
     )
 
-    patient_id = fields.Many2one("hospital.patient", string="Patient", required=True)
+    patient_id = fields.Many2one(
+        "hospital.patient", string="Patient", required=True, default=_get_default_note
+    )
     patient_age = fields.Integer("Age", related="patient_id.patient_age")
     notes = fields.Text(string="Registration Note")
     appointment_date = fields.Date(string="Date", required=True)
