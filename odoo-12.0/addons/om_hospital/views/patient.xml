@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <!--action to open the appointments of the patient-->
+    <record id="open_patient_appointments" model="ir.actions.act_window">
+        <field name="name">Appointments</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.appointment</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('patient_id','=',active_id)]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your First Appointment !
+            </p>
+        </field>
+    </record>
+
     <!--tree view of the patient model-->
     <record id="patient_tree" model="ir.ui.view">
         <field name="name">hospital.patient.tree</field>
@@ -34,6 +49,9 @@
                         <button name="open_patient_appointments" class="oe_stat_button"
                                 type="object"
                                 icon="fa-calendar">
+                            <field string="Appointments" name="appointment_count" widget="statinfo"/>
+                        </button>
+                        <button name="%(open_patient_appointments)d" class="oe_stat_button" type="action" icon="fa-usd">
                             <field string="Appointments" name="appointment_count" widget="statinfo"/>
                         </button>
                     </div>
