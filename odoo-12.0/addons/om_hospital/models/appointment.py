@@ -31,6 +31,16 @@ class HospitalAppointment(models.Model):
         # return "This is a default Note for Registration you can change it as you want"
         return 1
 
+    # Moving the State Of the Record To Confirm State in Button Click
+    # How to Add States/Statusbar for Records in Odoo
+    def action_confirm(self):
+        for record in self:
+            record.state = "confirm"
+
+    def action_done(self):
+        for rec in self:
+            rec.state = "done"
+
     name = fields.Char(
         string="Appointment ID",
         required=True,

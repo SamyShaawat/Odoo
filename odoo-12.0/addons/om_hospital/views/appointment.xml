@@ -23,6 +23,9 @@
         <field name="arch" type="xml">
             <form string="Appointments">
                 <header>
+                    <button name="action_confirm" type="object" string="Confirm" class="oe_highlight" states="draft"/>
+                    <button name="action_done" type="object" string="Done" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=', 'confirm')]}"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done"/>
                 </header>
                 <sheet>
