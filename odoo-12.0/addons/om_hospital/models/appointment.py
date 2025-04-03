@@ -41,6 +41,10 @@ class HospitalAppointment(models.Model):
         for rec in self:
             rec.state = "done"
 
+    def action_reset_draft(self):
+        for record in self:
+            record.state = "draft"
+
     name = fields.Char(
         string="Appointment ID",
         required=True,
@@ -64,6 +68,7 @@ class HospitalAppointment(models.Model):
             ("cancel", "Cancelled"),
         ],
         string="Status",
-        readonly=True,
+        readonly=False,
+        tracking=True,
         default="draft",
     )
