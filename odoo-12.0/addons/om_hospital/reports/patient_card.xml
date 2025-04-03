@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Create PDF Report-->
+    <template id="report_patient">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <h2>Patient Card</h2>
+                    Patient Name:
+                    <t t-esc="doc.patient_name"/>
+                    Age:
+                    <t t-esc="doc.patient_age"/>
+                    Gender:
+                    <t t-esc="doc.gender"/>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

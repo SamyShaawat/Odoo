@@ -15,6 +15,8 @@
         "views/patient.xml",
         "views/appointment.xml",
         "views/sale_order.xml",
+        "reports/report.xml",
+        "reports/patient_card.xml",
     ],
     "installable": True,
     "application": True,
