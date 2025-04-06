@@ -79,7 +79,7 @@ class HospitalPatient(models.Model):
         string="Appointment", compute="get_appointment_count"
     )
     image = fields.Binary(string="Image", attachment=True, track_visibility="always")
-    name = fields.Char(string="Test")
+    name = fields.Char(string="Contact Number")
     name_seq = fields.Char(
         string="Patient ID",
         required=True,
