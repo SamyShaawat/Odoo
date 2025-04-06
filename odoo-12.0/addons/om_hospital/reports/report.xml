@@ -8,6 +8,14 @@
             report_type="qweb-pdf"
             name="om_hospital.report_patient"
             file="om_hospital.report_patient"/>
-
+    <report
+            id="action_report_appointment"
+            string="Appointment Prescription"
+            model="hospital.appointment"
+            report_type="qweb-pdf"
+            name="om_hospital.appointment_report"
+            file="om_hospital.appointment_report"
+            print_report_name="'Appointment - %s' % (object.name)"
+    />
 
 </odoo>

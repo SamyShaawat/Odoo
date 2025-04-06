@@ -59,6 +59,9 @@ class HospitalAppointment(models.Model):
     )
     patient_age = fields.Integer("Age", related="patient_id.patient_age")
     notes = fields.Text(string="Registration Note")
+    appointment_lines = fields.One2many(
+        "hospital.appointment.lines", "appointment_id", string="Appointment Lines"
+    )
     appointment_date = fields.Date(string="Date", required=True)
     state = fields.Selection(
         [
@@ -72,3 +75,12 @@ class HospitalAppointment(models.Model):
         tracking=True,
         default="draft",
     )
+
+
+class HospitalAppointmentLines(models.Model):
+    _name = "hospital.appointment.lines"
+    _description = "Appointment Lines"
+
+    product_id = fields.Many2one("product.product", string="Medicine")
+    product_qty = fields.Integer(string="Quantity")
+    appointment_id = fields.Many2one("hospital.appointment", string="Appointment ID")
