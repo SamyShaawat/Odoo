@@ -84,7 +84,7 @@ class HospitalAppointment(models.Model):
                 body=_(
                     "Sale Order <a href='#' data-oe-model='sale.order' data-oe-id='%d'>%s</a> created."
                 )
-                     % (order.id, order.name),
+                % (order.id, order.name),
                 subtype="mail.mt_note",
             )
 
