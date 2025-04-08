@@ -45,6 +45,49 @@ class HospitalAppointment(models.Model):
         for record in self:
             record.state = "draft"
 
+    @api.multi
+    def action_create_sale_order(self):
+        SaleOrder = self.env["sale.order"]
+        SaleOrderLine = self.env["sale.order.line"]
+
+        for appointment in self:
+            if not appointment.appointment_lines:
+                raise ValueError("No prescription lines found.")
+
+            partner = appointment.patient_id  # assuming patient_id is res.partner
+
+            if not partner:
+                raise ValueError("Please set a patient for the appointment.")
+
+            order = SaleOrder.create(
+                {
+                    "partner_id": partner.id,
+                    "date_order": appointment.appointment_date,
+                    "origin": appointment.name,
+                    "patient_name": appointment.patient_id.patient_name,
+                }
+            )
+
+            for line in appointment.appointment_lines:
+                SaleOrderLine.create(
+                    {
+                        "order_id": order.id,
+                        "product_id": line.product_id.id,
+                        "product_uom_qty": line.product_qty,
+                        "price_unit": line.price_unit,
+                        "product_uom": line.product_uom.id,
+                        "name": line.product_id.name,
+                    }
+                )
+
+            appointment.message_post(
+                body=_(
+                    "Sale Order <a href='#' data-oe-model='sale.order' data-oe-id='%d'>%s</a> created."
+                )
+                     % (order.id, order.name),
+                subtype="mail.mt_note",
+            )
+
     name = fields.Char(
         string="Appointment ID",
         required=True,
@@ -81,6 +124,13 @@ class HospitalAppointmentLines(models.Model):
     _name = "hospital.appointment.lines"
     _description = "Appointment Lines"
 
-    product_id = fields.Many2one("product.product", string="Medicine")
-    product_qty = fields.Integer(string="Quantity")
+    product_id = fields.Many2one("product.product", string="Medicine", required=True)
+    product_qty = fields.Integer(string="Quantity", default=1)
     appointment_id = fields.Many2one("hospital.appointment", string="Appointment ID")
+    price_unit = fields.Float(
+        string="Unit Price", related="product_id.lst_price", store=True
+    )
+    product_uom = fields.Many2one(
+        "uom.uom", string="Unit of Measure", related="product_id.uom_id", store=True
+    )
+    partner_id = fields.Many2one("res.partner", string="Customer")

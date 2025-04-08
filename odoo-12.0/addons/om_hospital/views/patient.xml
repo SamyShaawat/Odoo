@@ -72,7 +72,7 @@
                         </group>
                         <group>
                             <field name="age_group"/>
-                            <field name="new_name"/>
+                            <field name="partner_id"/>
                             <field name="sale_order_count" force_save="1"/>
                         </group>
                     </group>

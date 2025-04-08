@@ -17,6 +17,12 @@
                                         <th>
                                             <strong>Quantity</strong>
                                         </th>
+                                        <th>
+                                            <strong>UOM</strong>
+                                        </th>
+                                        <th>
+                                            <strong>Price</strong>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -28,9 +34,16 @@
                                             <td>
                                                 <span t-field="line.product_qty"/>
                                             </td>
+                                            <td>
+                                                <span t-field="line.product_uom"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="line.price_unit"/>
+                                            </td>
                                         </tr>
                                     </t>
                                 </tbody>
+
                             </table>
                         </t>
                         <t t-if="not doc.appointment_lines">

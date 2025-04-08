@@ -17,11 +17,11 @@ class HospitalPatient(models.Model):
     _rec_name = "patient_name"
 
     # task from fathy
-    @api.onchange("new_name")
-    def _onchange_new_name(self):
-        if self.new_name:
+    @api.onchange("partner_id")
+    def _onchange_partner_id(self):
+        if self.partner_id:
             self.sale_order_count = self.env["sale.order"].search_count(
-                [("partner_id", "=", self.new_name.id)]
+                [("partner_id", "=", self.partner_id.id)]
             )
         else:
             self.sale_order_count = 0
@@ -108,12 +108,12 @@ class HospitalPatient(models.Model):
         store=True,
         track_visibility="always",
     )
-    new_name = fields.Many2one(
-        comodel_name="res.partner", string="New Name", track_visibility="always"
+    partner_id = fields.Many2one(
+        comodel_name="res.partner", string="Partner ID", track_visibility="always"
     )
     sale_order_count = fields.Integer(
         string="No. of Sale Orders",
-        compute="_onchange_new_name",
+        compute="_onchange_partner_id",
         store=True,
         track_visibility="always",
     )

@@ -28,6 +28,12 @@
                             attrs="{'invisible': [('state','!=', 'confirm')]}"/>
                     <button name="action_reset_draft" type="object" string="Reset to Draft" class="oe_highlight"
                             attrs="{'invisible': [('state', '=', 'draft')]}"/>
+                    <button name="action_create_sale_order"
+                            type="object"
+                            string="Create Sale Order"
+                            class="btn-primary"
+                            attrs="{'invisible': [('state', '!=', 'done')]}"/>
+
 
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirm,done" clickable="True"/>
                 </header>
@@ -55,20 +61,26 @@
                                 <tree>
                                     <field name="product_id"/>
                                     <field name="product_qty"/>
-                                    <field name="appointment_id" invisible="1"/>
+                                    <field name="price_unit"/>
+                                    <field name="product_uom"/>
+                                    <field name="partner_id"/>
                                 </tree>
                                 <form>
                                     <group>
                                         <group>
                                             <field name="product_id"/>
+                                            <field name="price_unit"/>
+                                            <field name="product_uom"/>
                                         </group>
                                         <group>
                                             <field name="product_qty"/>
+                                            <field name="partner_id"/>
                                         </group>
                                     </group>
                                 </form>
                             </field>
                         </page>
+
                         <!--                        <page string="Pharmacy">-->
                         <!--                            <field name="pharmacy_note"/>-->
                         <!--                        </page>-->
