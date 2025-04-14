@@ -7,7 +7,14 @@
     "author": "Samy Mostafa Shaawat",
     "maintainer": "Samy Mostafa Shaawat",
     "website": "https://samy.rowad.com/",
-    "depends": ["base", "website", "mail", "sale_management", "stock", "contacts", ],
+    "depends": [
+        "base",
+        "website",
+        "mail",
+        "sale_management",
+        "stock",
+        "contacts",
+    ],
     "demo": [],
     "data": [
         "security/ir.model.access.csv",
