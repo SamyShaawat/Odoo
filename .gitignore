@@ -131,13 +131,9 @@ odoo/addons/base/maintenance/
 odoo/filestore/
 *.zip
 *.tar.gz
-*.egg-info/
-*.log
-*.pot
 *.pyc
 *.pyo
 *.pyd
-__pycache__/
 *.sqlite3
 *.db
 *.swp
