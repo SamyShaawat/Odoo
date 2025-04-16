@@ -29,7 +29,7 @@ class HospitalAppointment(models.Model):
         # res["patient_id"] = 1
         # res["notes"] = "please like the video"
         # return "This is a default Note for Registration you can change it as you want"
-        return 1
+        return 2
 
     # Moving the State Of the Record To Confirm State in Button Click
     # How to Add States/Statusbar for Records in Odoo

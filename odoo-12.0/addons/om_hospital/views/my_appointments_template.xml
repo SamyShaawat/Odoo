@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="my_appointments_template" name="My Appointments">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>My Appointments</h1>
+                <t t-if="appointments">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Appointment ID</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="appointments" t-as="appointment" t-key="appointment.id">
+                                <tr>
+                                    <td>
+                                        <span t-esc="appointment.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="appointment.appointment_date"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="appointment.state"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </t>
+                <t t-else="">
+                    <p>You have no appointments scheduled.</p>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>

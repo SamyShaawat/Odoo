@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="template_hello" name="Hospital Hello Template">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container">
+                    <h1 t-esc="message"/>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

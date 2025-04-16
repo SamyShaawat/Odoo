@@ -117,3 +117,9 @@ class HospitalPatient(models.Model):
         store=True,
         track_visibility="always",
     )
+    # field to connect the patient with an existing Odoo User
+    user_id = fields.Many2one(
+        "res.users",
+        string="Related User",
+        track_visibility="always",
+    )

@@ -27,6 +27,8 @@
                 <field name="patient_age"/>
                 <field name="age_group"/>
                 <field name="gender"/>
+                <!-- Display the related Odoo user -->
+                <field name="user_id"/>
                 <field name="notes"/>
             </tree>
         </field>
@@ -72,6 +74,7 @@
                         </group>
                         <group>
                             <field name="age_group"/>
+                            <field name="user_id"/>
                             <field name="partner_id"/>
                             <field name="sale_order_count" force_save="1"/>
                         </group>

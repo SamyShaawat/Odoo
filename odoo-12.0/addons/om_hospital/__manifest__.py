@@ -22,6 +22,8 @@
         "views/patient.xml",
         "views/appointment.xml",
         "views/sale_order.xml",
+        "views/template.xml",
+        "views/my_appointments_template.xml",
         "reports/report.xml",
         "reports/patient_card.xml",
         "reports/appointment.xml",
