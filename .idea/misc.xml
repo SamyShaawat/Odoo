@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Black">
-    <option name="enabledOnReformat" value="true" />
-    <option name="enabledOnSave" value="true" />
-    <option name="pathToExecutable" value="C:\Users\samys\AppData\Local\Programs\Python\Python313\Scripts\black.exe" />
-    <option name="sdkName" value="Python 3.13" />
+    <option name="sdkName" value="Python 3.13 (Odoo)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13 (Odoo)" project-jdk-type="Python SDK" />
 </project>
