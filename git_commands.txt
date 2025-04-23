@@ -1,0 +1,29 @@
+# Show all remote branches (branches on Bitbucket)
+git branch -r
+
+# Show all branches (local and remote)
+git branch -a
+
+# Show only local branches
+git branch
+
+# Switch to the 'master' branch
+git checkout master
+
+# Show the URLs of the remotes (where Git pulls/pushes)
+git remote -v
+
+# Add all changes (new, modified, deleted files) to staging area
+git add .
+
+# Commit staged changes with a meaningful message
+git commit -m "meaningful commit message"
+
+# Push current branch (master) to Bitbucket
+git push origin master
+
+# Pull the latest changes from Bitbucket into current branch
+git pull origin master
+
+# Show the status of your working directory (what’s changed, staged, etc.)
+git status
