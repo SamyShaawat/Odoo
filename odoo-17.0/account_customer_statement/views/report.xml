@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+<!--        <report -->
+<!--            id="action_report_partnerledgercustomer"-->
+<!--            model="account_customer_statement.report_partnerledger_custom"-->
+<!--            string="Customer Statement Ledger"-->
+<!--            report_type="qweb-pdf"-->
+<!--            name="account_customer_statement.report_partnerledger_custom"-->
+<!--            file="account_customer_statement.report_partnerledger_custom"-->
+<!--            />-->
+        
+        <record id="action_report_partnerledgercustomer" model="ir.actions.report">
+            <field name="name">Customer Statement Ledger</field>
+            <field name="model">account_customer_statement.report_partnerledger_custom</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">account_customer_statement.report_partnerledger_custom</field>
+            <field name="report_file">account_customer_statement.report_partnerledger_custom</field>
+<!--            <field name="binding_model_id" ref="base.model_res_partner"/>-->
+<!--            <field name="binding_type">report</field>-->
+<!--            <field name="menu_id" eval="0"/>-->
+        </record>
+    </data>
+</openerp>
