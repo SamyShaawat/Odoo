@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_project_service_line,project_service_line,model_project_service_line,,1,1,1,1
+access_months_model,months_model,model_months_model,,1,1,1,1
+access_tree_log,tree_log,model_tree_log,,1,1,1,1
+access_lapor_specialty,lapor_specialty,model_lapor_specialty,,1,1,1,1
+access_lapor_specialty_table,lapor_specialty_table,model_lapor_specialty_table,,1,1,1,1
+
+

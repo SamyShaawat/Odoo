@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record id="hr_leave_balance_form" model="ir.ui.view">
+		<field name="name">hr.leave.balance.form</field>
+		<field name="model">hr.leave.balance</field>
+		<field name="arch" type="xml">
+  			<form>
+				<group>
+					<field name="employee_id"/>
+					<field name="company_id" groups="base.group_multi_company"/>
+					<field name="leave_type"/>
+					<field name="balance"/>
+					<field name="lost"/>
+					<field name="taken"/>
+					<field name="remaining"/>
+					<field name="leave_compensation"/>
+				</group>
+			</form>
+		</field>
+	</record>
+
+	<record id="hr_leave_balance_tree" model="ir.ui.view">
+		<field name="name">hr.leave.balance.tree</field>
+		<field name="model">hr.leave.balance</field>
+		<field name="arch" type="xml">
+			<tree string="Leave Balance">
+				<field name="employee_id"/>
+				<field name="company_id"/>
+				<field name="leave_type"/>
+				<field name="balance"/>
+				<field name="lost"/>
+				<field name="taken"/>
+				<field name="remaining"/>
+				<field name="leave_compensation"/>
+			</tree>
+		</field>
+	</record>
+
+	<record id="view_hr_leave_balace_search" model="ir.ui.view">
+		<field name="name">hr.leave.balance.search</field>
+		<field name="model">hr.leave.balance</field>
+		<field name="arch" type="xml">
+		   <search string="Balance">
+				<field name="employee_id" string="Employee"/>
+			</search>
+		</field>
+	</record>
+
+
+	<record id="action_hr_leave_balance" model="ir.actions.act_window">
+		<field name="name">Leave Balance</field>
+		<field name="res_model">hr.leave.balance</field>
+		<field name="view_mode">tree,form</field>
+<!--		<field name="search_view_id" ref="view_loan_request_search_form"/>-->
+		 <field name="help" type="html">
+			<p class="oe_view_nocontent_create">
+				Click to create a new Leave Balance.
+			</p><p>
+				Use this menu to create Employee Leave balance.
+			</p>
+		</field>
+	</record>
+
+    <menuitem name="Leave Balance" action="action_hr_leave_balance"
+        id="menu_hr_leave_balance" parent="hr_holidays.menu_hr_holidays_management"
+        sequence="20"/>
+
+<!--	<record id="hr_leave_allocation_view_form_manager" model="ir.ui.view">-->
+<!--		<field name="name">hr.leave.allocation.form.dates</field>-->
+<!--		<field name="model">hr.leave.allocation</field>-->
+<!--		<field name="inherit_id" ref="hr_holidays.hr_leave_allocation_view_form_manager" />-->
+<!--		<field name="arch" type="xml">-->
+<!--			<field name="number_of_days_display" position="after">-->
+<!--				<field name="last_update" />-->
+<!--			</field>-->
+<!--		</field>-->
+<!--	</record>-->
+
+</odoo>

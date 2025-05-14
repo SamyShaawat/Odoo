@@ -1,0 +1,69 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="hr_employee_settlement_form">
+      <field name="name">hr_employee_settlement_form</field>
+      <field name="model">hr.employee.settlement</field>
+      <field name="arch" type="xml">
+        <form>
+          <header>
+            <field name="state" widget="statusbar"/>
+            <button name="action_confirm" type="object" string="Confirm" invisible="state != 'draft'" class="oe_highlight"/>
+            <button name="action_cancel" type="object" string="Cancel" invisible="state != 'done'" class="oe_highlight"/>
+          </header>
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                  <field name="number" readonly="1"/>
+              </h1>
+            </div>
+            <group cols="4">
+              <field name="employee_id" required="1"/>
+              <field name="department_id" />
+              <field name="type" required="1"/>
+              <field name="settlement_id" domain="[('type','=',type)]" options="{'no_create': True}" required="1"/>
+              <field name="start_date" required="1"/>
+              <field name="duration"/>
+              <field name="end_date"/>
+              <field name="calculation_method" required="1"/>
+              <field name="percentage" invisible="calculation_method == 'fixed'"/>
+              <field name="amount" readonly="calculation_method != 'fixed'" force_save="1"/>
+              <field name="total_amount" readonly="1" invisible="calculation_method == 'fixed'" force_save="1"/>
+            </group>
+            <group>
+              <field name="notes"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="hr_employee_settlement_list">
+      <field name="name">hr_employee_settlement_list</field>
+      <field name="model">hr.employee.settlement</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="number"/>
+          <field name="employee_id"/>
+          <field name="type"/>
+          <field name="settlement_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="hr_employee_settlement_action_window">
+      <field name="name">Employee Settlement</field>
+      <field name="res_model">hr.employee.settlement</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem name="Settlement" id="hr_settlement_menu" sequence='90' parent="hr_work_entry_contract_enterprise.menu_hr_payroll_root"/>
+    <menuitem name="Employee Settlement" id="hr_employee_settlement_menu" action="hr_employee_settlement_action_window" parent="hr_settlement_menu"/>
+
+
+  </data>
+</odoo>

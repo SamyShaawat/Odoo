@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sale_order_inherit" model="ir.ui.view">
+        <field name="name">sale.order.template.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/tree/field[@name='product_template_id']" position="after">
+                <field name="months" widget="many2many_tags"
+                       options="{'no_edit': True, 'no_create': True,'no_open': True}"/>
+                <field name="number_of_services" column_invisible="not parent.sale_order_template_id"/>
+            </xpath>
+
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+
+                <field name="sale_order_template_id" invisible="1"/>
+                <field name="project_start_date" required="sale_order_template_id" invisible="not sale_order_template_id"/>
+                <field name="project_end_date" required="sale_order_template_id" invisible="not sale_order_template_id"/>
+                <field name="check_number_trees" invisible="1"/>
+                <field name="num_of_trees" invisible="not sale_order_template_id" required="check_number_trees"/>
+                <field name="total_manpower" invisible="not sale_order_template_id"/>
+                <field name="total_expense"/>
+            </xpath>
+            <xpath expr="//page[@name='other_information']" position="after">
+                <page string="Expenses" name="expenses">
+                    <field name="quick_transactions">
+                        <tree editable="bottom">
+                            <field name="date"/>
+                            <field name="expense_type"/>
+                            <field name="name"/>
+                            <field name="amount"/>
+                            <field name="stage" readonly="1"/>
+                        </tree>
+                    </field>
+                </page>
+                <page string="Manpower" name="man_power">
+                    <field name="manloper_table">
+                        <tree editable="bottom">
+                            <field name="manloper"/>
+                            <field name="count"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="email_template_edi_purchase_customized" model="mail.template">
+            <field name="name">الشراء: طلب عرض أسعار</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="subject">{{ object.company_id.name }} Order (Ref {{ object.name or 'n/a' }})</field>
+            <field name="partner_to">{{ object.partner_id.id }}</field>
+            <field name="description">تم إرساله يدويًا إلى البائع لطلب عرض أسعار</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        عزيزي
+                        <t t-out="object.partner_id.name or ''">Brandon Freeman</t>
+                        <t t-if="object.partner_id.parent_id">
+                            (<t t-out="object.partner_id.parent_id.name or ''">Azure Interior</t>)
+                        </t>
+                        <br/>
+                        <br/>
+                        هنا في المرفق طلب عرض أسعار
+                        <span style="font-weight:bold;" t-out="object.name or ''">P00015</span>
+                        <t t-if="object.partner_ref">
+                            مع الإشارة:
+                            <t t-out="object.partner_ref or ''">REF_XXX</t>
+                        </t>
+                        from <t t-out="object.company_id.name or ''">YourCompany</t>.
+                        <br/>
+                        <br/>
+                        إذا كان لديك أي أسئلة، فلا تتردد في الاتصال بنا.
+                        <br/>
+                        <br/>
+                        أطيب التحيات،
+                        <t t-if="not is_html_empty(object.user_id.signature)">
+                            <br/>
+                            <br/>
+                            <t t-out="object.user_id.signature or ''">--<br/>Mitchell Admin
+                            </t>
+                        </t>
+                    </p>
+                </div>
+            </field>
+            <field name="report_template_ids" eval="[(4, ref('purchase.report_purchase_quotation'))]"/>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <record id="email_template_edi_purchase_done_customized" model="mail.template">
+            <field name="name">Purchase: Purchase Order</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="subject">{{ object.company_id.name }} Order (Ref {{ object.name or 'n/a' }})</field>
+            <field name="partner_to">{{ object.partner_id.id }}</field>
+            <field name="description">تم إرساله إلى البائع مع أمر الشراء المرفق</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        عزيزي
+                        <t t-out="object.partner_id.name or ''">Brandon Freeman</t>
+                        <t t-if="object.partner_id.parent_id">
+                            (<t t-out="object.partner_id.parent_id.name or ''">Azure Interior</t>)
+                        </t>
+                        <br/>
+                        <br/>
+                        هنا في المرفق طلب عرض أسعار
+                        <span style="font-weight:bold;" t-out="object.name or ''">P00015</span>
+                        <t t-if="object.partner_ref">
+                            with reference:
+                            <t t-out="object.partner_ref or ''">REF_XXX</t>
+                        </t>
+                        تبلغ قيمتها
+                        <span style="font-weight:bold;"
+                              t-out="format_amount(object.amount_total, object.currency_id) or ''">$ 10.00
+                        </span>
+
+                        من <t t-out="object.company_id.name or ''">YourCompany</t>.
+                        <br/>
+                        <br/>
+                        <t t-if="object.date_planned">
+                            ومن المتوقع استلام الإيصال <span style="font-weight:bold;"
+                                                             t-out="format_date(object.date_planned) or ''">
+                            05/05/2021</span>.
+                            <br/>
+                            <br/>
+                            هل بإمكانكم التأكيد على استلام هذا الطلب؟
+                        </t>
+                        <t t-if="not is_html_empty(object.user_id.signature)">
+                            <br/>
+                            <br/>
+                            <t t-out="object.user_id.signature or ''">--<br/>Mitchell Admin
+                            </t>
+                        </t>
+                        <br/>
+                        <br/>
+                    </p>
+                </div>
+            </field>
+            <field name="report_template_ids" eval="[(4, ref('purchase.action_report_purchase_order'))]"/>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

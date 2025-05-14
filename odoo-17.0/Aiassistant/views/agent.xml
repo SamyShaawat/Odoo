@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="agent_form_view">
+            <field name="name">agent</field>
+            <field name="model">agent</field>
+            <field name="type">form</field>
+            <field name="priority" eval="False"/>
+            <field name="arch" type="xml">
+                <form string="AI Assistant">
+                    <sheet>
+                        <field name="ai_assistant"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cashier_tree_view">
+            <field name="name">Patient Assistant</field>
+            <field name="model">agent</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="question"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="agent_action">
+            <field name="name">Patient Assistant</field>
+            <field name="res_model">agent</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p>
+                    Here is a list of all the Appointments created.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

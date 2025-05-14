@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+	<record id="cron_timeoff_set_leave_balance" model="ir.cron" forcecreate="True">
+		<field name="name">Timeoff Balance</field>
+		<field name="user_id" ref="base.user_root" />
+		<field name="interval_number">4</field>
+		<field name="interval_type">hours</field>
+		<field name="numbercall">-1</field>
+		<field name="model_id" ref="model_hr_leave_balance" />
+		<field name="state">code</field>
+		<field name="code">model._set_leave_balance()</field>
+	</record>
+
+</odoo>

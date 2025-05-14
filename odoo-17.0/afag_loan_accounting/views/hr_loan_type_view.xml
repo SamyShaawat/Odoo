@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_loan_type_view_form" model="ir.ui.view">
+        <field name="name">hr.loan.type.view.form</field>
+        <field name="model">hr.loan.type</field>
+        <field name="arch" type="xml">
+            <form string="Loan Type">
+                <sheet>
+                    <group col="4">
+                        <field name="name" required="1"/>
+                        <field name="company_id"/>
+                    </group>
+
+                    <notebook colspan="4">
+                        <page string="Loan Definition">
+                            <group>
+                                <field name="payment_journal_id" domain="[('type', 'in', ['bank','cash'])]"/>
+                                <field name="loan_account_id"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_loan_type_act_window" model="ir.actions.act_window">
+        <field name="name">Loan Type</field>
+        <field name="res_model">hr.loan.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Configuration" id="loan_configuration_menu_item" parent="afag_loan.hr_loan_menu_root" sequence="2"/>
+
+    <menuitem name="Loan Type" id="loan_type_menu_item" parent="loan_configuration_menu_item"  action="hr_loan_type_act_window" sequence="1"/>
+
+</odoo>

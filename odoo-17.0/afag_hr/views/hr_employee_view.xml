@@ -1,0 +1,73 @@
+<odoo>
+  <data>
+    <record id="hr_employee_view_form" model="ir.ui.view">
+        <field name="name">hr.employee</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='department_id']" position="before">
+                <field name="real_employee" widget="boolean_toggle"/>
+            </xpath>
+            <xpath expr="//page[@name='hr_settings']/group/group[1]/field[@name='user_id']" position="after">
+                <field name="occupation_name"/>
+                <field name="employee_no"/>
+            </xpath>
+            <xpath expr="//page[@name='hr_settings']/group/group[1]/field[@name='employee_type']" position="before">
+                <field name="join_date"/>
+                <label for="service_years" string="Years of Service"/>
+                <div>
+                    <div>
+                        <field name="service_years" class="oe_inline"/>
+                        Years,
+                        <field name="service_months" class="oe_inline"/>
+                        Months,
+                        <field name="service_days" class="oe_inline"/>
+                        Days
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//page[@name='hr_settings']" position="after">
+                <page name="benefits" string="Benefits">
+                    <group>
+                        <field name="annual_leave_type"/>
+                        <field name="annual_leave_days"/>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//page[last()]" position="after">
+                <page name="employee_family" string="Employee Family">
+                    <field name="family_ids" widget="one2many" no_label="1">
+                        <tree string="Employee Family" editable="bottom">
+                            <field name="name" required="1"/>
+                            <field name="gender"/>
+                            <field name="relation"/>
+                            <field name="phone"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='birthday']" position="after">
+                <field name="age"/>
+            </xpath>
+            <xpath expr="//field[@name='ssnid']" position="after">
+                <field name="gosi_no"/>
+                <field name="medical_insurance_no"/>
+            </xpath>
+            <field name="identification_id" position="after">
+                <field name="id_issue_date"/>
+                <field name="id_expiration_date"/>
+                <field name="id_issuing_place"/>
+            </field>
+            <field name="passport_id" position="after">
+                <field name="passport_issue_date"/>
+                <field name="passport_expiration_date"/>
+                <field name="passport_issuing_place"/>
+            </field>
+            <label for="private_street" position="before">
+                <field name="full_name"/>
+                <field name="full_name_ar"/>
+            </label>
+        </field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_eos_reason,access.hr.eos.reason,model_hr_eos_reason,base.group_user,1,1,1,1
+access_hr_eos_request,access.hr.eos.request,model_hr_eos_request,base.group_user,1,1,1,1

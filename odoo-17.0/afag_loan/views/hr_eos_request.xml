@@ -1,0 +1,23 @@
+<odoo>
+  <data>
+      <record id="hr_eos_request_form_view" model="ir.ui.view">
+          <field name="name">hr.eos.request.view.form</field>
+          <field name="model">hr.eos.request</field>
+          <field name="inherit_id" ref="afag_eos.hr_eos_request_form_view"/>
+          <field name="arch" type="xml">
+            <xpath expr="//group[@name='eos_compensation']" position="after">
+                <group string="Loan Settlement">
+<!--                    <field name="unpaid_loan_ids">-->
+<!--                        <tree>-->
+<!--                            <field name="id"/>-->
+<!--                            <field name="name"/>-->
+<!--                            <field name="balance_amount"/>-->
+<!--                        </tree>-->
+<!--                    </field>-->
+                    <field name="unpaid_loan"/>
+                </group>
+			</xpath>
+          </field>
+      </record>
+  </data>
+</odoo>

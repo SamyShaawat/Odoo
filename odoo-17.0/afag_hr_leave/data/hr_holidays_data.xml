@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="holiday_status_marriage_leave" model="hr.leave.type">
+            <field name="name">Marriage Leave</field>
+            <field name="requires_allocation">no</field>
+            <field name="leave_validation_type">both</field>
+            <field name="request_unit">day</field>
+            <field name="calc_type">working</field>
+            <field name="max_days_allowed">5</field>
+            <field name="responsible_ids" eval="[(4, ref('base.user_admin'))]"/>
+            <field name="icon_id" ref="hr_holidays.icon_28"/>
+            <field name="color">5</field>
+            <field name="company_id" eval="False"/> <!-- Explicitely set to False for it to be available to all companies -->
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="holiday_status_Pilgrimage_leave" model="hr.leave.type">
+            <field name="name">Pilgrimage (Hajj) Leave</field>
+            <field name="requires_allocation">no</field>
+            <field name="leave_validation_type">both</field>
+            <field name="request_unit">day</field>
+            <field name="calc_type">calendar</field>
+            <field name="max_days_allowed">15</field>
+            <field name="responsible_ids" eval="[(4, ref('base.user_admin'))]"/>
+            <field name="icon_id" ref="hr_holidays.icon_28"/>
+            <field name="color">5</field>
+            <field name="company_id" eval="False"/> <!-- Explicitely set to False for it to be available to all companies -->
+            <field name="sequence">11</field>
+        </record>
+
+        <record id="holiday_status_iddah_leave" model="hr.leave.type">
+            <field name="name">Iddah Leave (Muslim Women)</field>
+            <field name="requires_allocation">no</field>
+            <field name="leave_validation_type">both</field>
+            <field name="request_unit">day</field>
+            <field name="calc_type">calendar</field>
+            <field name="marital">married</field>
+            <field name="max_days_allowed">130</field>
+            <field name="gender">female</field>
+            <field name="responsible_ids" eval="[(4, ref('base.user_admin'))]"/>
+            <field name="icon_id" ref="hr_holidays.icon_28"/>
+            <field name="color">5</field>
+            <field name="company_id" eval="False"/> <!-- Explicitely set to False for it to be available to all companies -->
+            <field name="sequence">12</field>
+        </record>
+
+        <record id="holiday_status_iddah_non_muslim_leave" model="hr.leave.type">
+            <field name="name">Iddah Leave (Non-Muslim Women)</field>
+            <field name="requires_allocation">no</field>
+            <field name="leave_validation_type">both</field>
+            <field name="request_unit">day</field>
+            <field name="calc_type">calendar</field>
+            <field name="marital">married</field>
+            <field name="max_days_allowed">15</field>
+            <field name="responsible_ids" eval="[(4, ref('base.user_admin'))]"/>
+            <field name="icon_id" ref="hr_holidays.icon_28"/>
+            <field name="color">15</field>
+            <field name="company_id" eval="False"/> <!-- Explicitely set to False for it to be available to all companies -->
+            <field name="sequence">13</field>
+        </record>
+
+        <record id="holiday_status_paternity_leave" model="hr.leave.type">
+            <field name="name">Paternity Leave</field>
+            <field name="requires_allocation">no</field>
+            <field name="leave_validation_type">both</field>
+            <field name="request_unit">day</field>
+            <field name="calc_type">working</field>
+            <field name="marital">married</field>
+            <field name="gender">male</field>
+            <field name="max_days_allowed">3</field>
+            <field name="responsible_ids" eval="[(4, ref('base.user_admin'))]"/>
+            <field name="icon_id" ref="hr_holidays.icon_28"/>
+            <field name="color">15</field>
+            <field name="company_id" eval="False"/> <!-- Explicitely set to False for it to be available to all companies -->
+            <field name="sequence">14</field>
+        </record>
+
+        <record id="holiday_status_maternity_leave" model="hr.leave.type">
+            <field name="name">Maternity Leave</field>
+            <field name="requires_allocation">no</field>
+            <field name="leave_validation_type">both</field>
+            <field name="request_unit">day</field>
+            <field name="calc_type">working</field>
+            <field name="marital">married</field>
+            <field name="gender">female</field>
+            <field name="max_days_allowed">70</field>
+            <field name="responsible_ids" eval="[(4, ref('base.user_admin'))]"/>
+            <field name="icon_id" ref="hr_holidays.icon_28"/>
+            <field name="color">15</field>
+            <field name="company_id" eval="False"/> <!-- Explicitely set to False for it to be available to all companies -->
+            <field name="sequence">15</field>
+        </record>
+
+        <record id="holiday_status_examination_leave" model="hr.leave.type">
+            <field name="name">Examination Leave</field>
+            <field name="requires_allocation">no</field>
+            <field name="leave_validation_type">both</field>
+            <field name="request_unit">day</field>
+            <field name="calc_type">calendar</field>
+            <field name="max_days_allowed">30</field>
+            <field name="responsible_ids" eval="[(4, ref('base.user_admin'))]"/>
+            <field name="icon_id" ref="hr_holidays.icon_28"/>
+            <field name="color">15</field>
+            <field name="company_id" eval="False"/> <!-- Explicitely set to False for it to be available to all companies -->
+            <field name="sequence">16</field>
+        </record>
+
+    </data>
+</odoo>

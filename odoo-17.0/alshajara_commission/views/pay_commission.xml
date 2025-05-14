@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_order_form" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+            
+                <xpath expr="//sheet" position="before">
+                    <button name="action_create_expense" type="object" string="Create Commission"
+                            class="btn-primary" invisible="if_commission == False"/>
+                    <button name="open_bill"
+                                    class="oe_stat_button"
+                                    icon="fa-bars"
+                                    invisible="if_commission == False"
+                                    string="View Commission"
+                                    type="object">
+                    </button>
+                </xpath>
+<!--                <xpath expr="//field[@name='payment_term_id']" position="after">-->
+<!--                    <button name="action_create_expense" type="object" string="Create Commission" class="btn-primary"/>-->
+<!--                </xpath>       -->
+<!--                <button name="create_invoice" position="after">-->
+<!--                        <button name="action_create_expense" type="object" string="Create Commission" class="btn-primary"/>-->
+<!--                </button>-->
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="if_commission"/>
+                    <field name="employee_id" invisible="if_commission == False" />
+                    <field name="commission_rate" invisible="if_commission == False" />
+                    <field name="total_without_commission" invisible="if_commission == False"/>
+
+                    <field name="commission_value" invisible="if_commission == False" />
+<!--                    <button name="action_create_commission"-->
+<!--                                type="object" string="Create Commission"-->
+<!--                                invisible="if_commission == False"-->
+<!--                                class="oe_highlight"/>-->
+
+<!--                     <button name="action_create_expense" type="object" string="Create Commission" class="btn-primary"/>-->
+<!--                     <div name="button_box" class="oe_button_box">-->
+<!--                            <button name="open_bill"-->
+<!--                                    class="oe_stat_button"-->
+<!--                                    icon="fa-bars"-->
+<!--                                    invisible="if_commission == False"-->
+<!--                                    string="View Commission"-->
+<!--                                    type="object">-->
+<!--                            </button>-->
+<!--                     </div>-->
+                </xpath>
+        </field>
+    </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="project_task_inherit" model="ir.ui.view">
+        <field name="name">project.task.inherit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='extra_info']" position="after">
+                <page string="Trees Completion Log">
+                    <field name="tree_log">
+                        <tree editable="bottom">
+                            <field name="logged_date"/>
+                            <field name="date"/>
+                            <field name="tree_done" sum="Total"/>
+                        </tree>
+                    </field>
+                </page>
+                <page string="Expenses">
+                    <field name="quick_transactions">
+                        <tree editable="bottom">
+                            <field name="date"/>
+                            <field name="expense_type"/>
+                            <field name="name"/>
+                            <field name="amount" sum="Total"/>
+                            <field name="stage" readonly="1"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            <xpath expr="//div[@id='date_deadline_and_recurring_task']" position="after">
+                <field name="trees"/>
+                <field name="completed_tress"/>
+                <field name="completion" widget="progressbar" force_save="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

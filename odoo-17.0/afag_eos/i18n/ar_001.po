@@ -1,0 +1,754 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* afag_eos
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-01 11:12+0000\n"
+"PO-Revision-Date: 2024-11-01 11:12+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/test.py:0
+#, python-format
+msgid "%s Days"
+msgstr ""
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/test.py:0
+#, python-format
+msgid "%s Months"
+msgstr ""
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/test.py:0
+#, python-format
+msgid "%s Years"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: afag_eos
+#: model_terms:ir.ui.view,arch_db:afag_eos.hr_eos_request_form_view
+msgid "Approve"
+msgstr "موافقة"
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__article_77
+msgid "Article 77"
+msgstr "المادة 77"
+
+#. module: afag_eos
+#: model:hr.salary.rule,name:afag_eos.article77_compensation_salary_rule
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__article_77_compensation
+msgid "Article 77 Compensation"
+msgstr "تعويض المادة 77"
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/test.py:0
+#, python-format
+msgid "Basic Salary"
+msgstr "الراتب الأساسي"
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/test.py:0
+#, python-format
+msgid ""
+"Cannot create new end of service request for %(empl_name)s, the employee has"
+" already a request."
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__currency_id
+msgid "Company Currency"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_leave_type__eos_computed
+msgid "Computed in EOS"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.ui.menu,name:afag_eos.eos_configuration_menu_item
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: afag_eos
+#: model_terms:ir.ui.view,arch_db:afag_eos.hr_eos_request_form_view
+msgid "Confirm"
+msgstr "إعتماد"
+
+#. module: afag_eos
+#: model:ir.model.fields.selection,name:afag_eos.selection__hr_eos_request__state__confirm
+msgid "Confirmed"
+msgstr "معتمد"
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_reason__create_uid
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_reason__create_date
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__contract_id
+msgid "Current Contract"
+msgstr "العقد الحالي"
+
+#. module: afag_eos
+#: model:ir.model.fields,help:afag_eos.field_hr_eos_request__contract_id
+msgid "Current contract of the employee"
+msgstr ""
+
+#. module: afag_eos
+#: model_terms:ir.ui.view,arch_db:afag_eos.hr_eos_request_form_view
+msgid "Days"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__service_days
+msgid "Days of Service"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__deduct_unpaid
+msgid "Deduct Unpaid days"
+msgstr "خصم الإجازات غير المدفوعة"
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/test.py:0
+#, python-format
+msgid "Deduction"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__department_id
+msgid "Department"
+msgstr "القسم/الإدارة"
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_reason__display_name
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields.selection,name:afag_eos.selection__hr_eos_request__state__done
+msgid "Done"
+msgstr "منتهي"
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/test.py:0
+#, python-format
+msgid "Double Holiday Pay"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields.selection,name:afag_eos.selection__hr_eos_request__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: afag_eos
+#: model_terms:ir.ui.view,arch_db:afag_eos.hr_eos_request_form_view
+msgid "EOS Compensation"
+msgstr "تعويض نهاية الخدمة"
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/hr_eos_request.py:0
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__employee_id
+#, python-format
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: afag_eos
+#: model:hr.eos.reason,name:afag_eos.reason_3
+msgid "End Contract Article 80"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.ui.menu,name:afag_eos.hr_eos_menu_root
+msgid "End Of Service"
+msgstr "نهاية الخدمة"
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/hr_eos_request.py:0
+#: code:addons/afag_eos/models/test.py:0
+#, python-format
+msgid "End Of Service of the employee %s"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.actions.act_window,name:afag_eos.hr_eos_request_action_window
+msgid "End Of service Request"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.actions.act_window,name:afag_eos.hr_eos_reason_action_window
+msgid "End Of service reason"
+msgstr "أسباب إنهاء الخدمة"
+
+#. module: afag_eos
+#: model:ir.model,name:afag_eos.model_hr_eos_reason
+msgid "End Of service reasons"
+msgstr "أسباب إنهاء الخدمة"
+
+#. module: afag_eos
+#: model:ir.model,name:afag_eos.model_hr_eos_request
+msgid "End Of service request"
+msgstr "طلب إنهاء الخدمة"
+
+#. module: afag_eos
+#: model:ir.model.fields.selection,name:afag_eos.selection__hr_eos_reason__type__end_of_contract
+msgid "End of Contract"
+msgstr "نهاية العقد"
+
+#. module: afag_eos
+#: model:hr.eos.reason,name:afag_eos.reason_6
+msgid "End of Contract By Both Parties Agreement"
+msgstr "إنتهاء العقد بإتفاق الطرفين"
+
+#. module: afag_eos
+#: model:hr.eos.reason,name:afag_eos.reason_5
+msgid "End of Probation Period"
+msgstr "نهاية فترة التجربة"
+
+#. module: afag_eos
+#: model:ir.module.category,name:afag_eos.module_category_hr_eos
+msgid "End of Service"
+msgstr "نهاية الخدمة"
+
+#. module: afag_eos
+#: model_terms:ir.ui.view,arch_db:afag_eos.hr_eos_reason_form_view
+#: model_terms:ir.ui.view,arch_db:afag_eos.hr_eos_request_form_view
+msgid "End of Service reasons"
+msgstr "أسباب إنهاء الخدمة"
+
+#. module: afag_eos
+#: model:ir.ui.menu,name:afag_eos.eos_reason_menu_item
+msgid "End of service Reason"
+msgstr "أسباب إنهاء الخدمة"
+
+#. module: afag_eos
+#: model:hr.eos.reason,name:afag_eos.reason_1
+msgid "End of the Contract"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_payroll_structure__is_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_payslip__eos_id
+msgid "Eos"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__eos_amount
+msgid "Eos Amount"
+msgstr "قيمة نهاية الخدمة"
+
+#. module: afag_eos
+#: model:hr.salary.rule,name:afag_eos.eos_compensation_salary_rule
+msgid "Eos Compensation"
+msgstr "إحتساب نهاية الخدمة"
+
+#. module: afag_eos
+#: model:ir.ui.menu,name:afag_eos.eos_request_menu_item
+msgid "Eos Request"
+msgstr "طلبات نهاية الخدمة"
+
+#. module: afag_eos
+#: model_terms:ir.ui.view,arch_db:afag_eos.hr_eos_request_view_tree
+msgid "Eos Requests"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__eos_structure_id
+msgid "Eos Structure"
+msgstr "هيكل نهاية الخدمة"
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,help:afag_eos.field_hr_eos_request__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: afag_eos
+#: model_terms:ir.ui.view,arch_db:afag_eos.hr_eos_request_form_view
+msgid "Generate Payslip"
+msgstr "إنشاء إيصال الدفع"
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/test.py:0
+#, python-format
+msgid "Gross"
+msgstr "الإجمالي"
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.module.category,description:afag_eos.module_category_hr_eos
+msgid "Helps you manage your End of Service process."
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_reason__id
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__id
+msgid "ID"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,help:afag_eos.field_hr_eos_request__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,help:afag_eos.field_hr_eos_request__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,help:afag_eos.field_hr_eos_request__message_has_error
+#: model:ir.model.fields,help:afag_eos.field_hr_eos_request__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__job_id
+msgid "Job Position"
+msgstr "المسمى الوظيفي"
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__join_date
+msgid "Join Date"
+msgstr "تاريخ الإنضمام"
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_reason__write_uid
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_reason__write_date
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__date
+msgid "Last Working Date"
+msgstr "اخر يوم عمل"
+
+#. module: afag_eos
+#: model:hr.salary.rule,name:afag_eos.leave_compensation_salary_rule
+msgid "Leave Compensation"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__leave_compensation
+msgid "Leaves Compensation"
+msgstr "تعويض الإجازات"
+
+#. module: afag_eos
+#: model:hr.eos.reason,name:afag_eos.reason_8
+msgid "Leaving work as a result of force majeure"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__parent_id
+#: model:res.groups,name:afag_eos.group_hr_eos_manager
+msgid "Manager"
+msgstr "المدير"
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__service_months
+msgid "Months of Service"
+msgstr ""
+
+#. module: afag_eos
+#: model_terms:ir.ui.view,arch_db:afag_eos.hr_eos_request_form_view
+msgid "Months,"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_reason__name
+msgid "Name"
+msgstr ""
+
+#. module: afag_eos
+#: model:hr.salary.rule,name:afag_eos.eos_net_salary
+msgid "Net EOS"
+msgstr "صافي نهاية الخدمة"
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/test.py:0
+#, python-format
+msgid "Net Salary"
+msgstr "صافي الراتب"
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/hr_eos_request.py:0
+#: code:addons/afag_eos/models/test.py:0
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields.selection,name:afag_eos.selection__hr_eos_reason__type__no_compensation
+msgid "No Compensation"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__notes
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__name
+msgid "Number"
+msgstr "الرمز"
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,help:afag_eos.field_hr_eos_request__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,help:afag_eos.field_hr_eos_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields.selection,name:afag_eos.selection__hr_eos_request__state__paid
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: afag_eos
+#: model:ir.model,name:afag_eos.model_hr_payslip
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__payslip_id
+#: model_terms:ir.ui.view,arch_db:afag_eos.hr_eos_request_form_view
+msgid "Pay Slip"
+msgstr "إيصال الدفع "
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__payslip_net_amount
+msgid "Payslip Net Amount"
+msgstr ""
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/test.py:0
+#, python-format
+msgid "Prorated end-of-year bonus"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__reason_id
+msgid "Reason"
+msgstr "سبب إنهاء الخدمة"
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/test.py:0
+#, python-format
+msgid "Reimbursement"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__remaining_leaves
+msgid "Remaining Leaves"
+msgstr "متبقي الإجازات"
+
+#. module: afag_eos
+#: model:ir.ui.menu,name:afag_eos.eos_request_main_menu_item
+msgid "Request"
+msgstr "الطلبات"
+
+#. module: afag_eos
+#: model:hr.eos.reason,name:afag_eos.reason_2
+#: model:ir.model.fields.selection,name:afag_eos.selection__hr_eos_reason__type__resignation
+msgid "Resignation"
+msgstr "إستغالة"
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__resource_id
+msgid "Resource"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model,name:afag_eos.model_hr_payroll_structure
+msgid "Salary Structure"
+msgstr "هيكل الراتب "
+
+#. module: afag_eos
+#: model_terms:ir.ui.view,arch_db:afag_eos.hr_eos_request_form_view
+msgid "Set to Draft"
+msgstr "إرجاع الى مسودة"
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: afag_eos
+#: model:ir.model.fields,help:afag_eos.field_hr_eos_request__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: afag_eos
+#: model:hr.eos.reason,name:afag_eos.reason_7
+msgid "The worker left work for one of the cases mentioned in Article 81"
+msgstr ""
+
+#. module: afag_eos
+#: model:hr.eos.reason,name:afag_eos.reason_9
+msgid ""
+"The worker terminates the work contract within six months of the marriage "
+"contract or within three months of giving birth"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,help:afag_eos.field_hr_eos_request__tz
+msgid ""
+"This field is used in order to define in which timezone the resources will "
+"work."
+msgstr ""
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/test.py:0
+#, python-format
+msgid ""
+"This payslip has been created from: <a href=# data-oe-"
+"model=hr.end_of_service data-oe-id=%d>%s</a>"
+msgstr ""
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/hr_eos_request.py:0
+#, python-format
+msgid ""
+"This payslip has been created from: <a href=# data-oe-model=hr.eos.request "
+"data-oe-id=%d>%s</a>"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model,name:afag_eos.model_hr_leave_type
+msgid "Time Off Type"
+msgstr "نوع الإجازة "
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__tz
+msgid "Timezone"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__total_salary
+msgid "Total Wage"
+msgstr "الراتب الإجمالي"
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_reason__type
+msgid "Type"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,help:afag_eos.field_hr_eos_request__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__unpaid_leave
+msgid "Unpaid Days"
+msgstr "الإجازات غير المدفوعة"
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,help:afag_eos.field_hr_eos_request__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__resource_calendar_id
+msgid "Working Hours"
+msgstr ""
+
+#. module: afag_eos
+#: model:ir.model.fields,field_description:afag_eos.field_hr_eos_request__service_years
+#: model_terms:ir.ui.view,arch_db:afag_eos.hr_eos_request_form_view
+msgid "Years of Service"
+msgstr "مدة الخدمة"
+
+#. module: afag_eos
+#: model_terms:ir.ui.view,arch_db:afag_eos.hr_eos_request_form_view
+msgid "Years,"
+msgstr ""
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/test.py:0
+#, python-format
+msgid "You cannot cancel a record which its payslip is posted"
+msgstr ""
+
+#. module: afag_eos
+#. odoo-python
+#: code:addons/afag_eos/models/test.py:0
+#, python-format
+msgid "You cannot delete a record which is not in draft state."
+msgstr "يمكن حذف السجلات في حالة مسودة فقط"
+
+#. module: afag_eos
+#: model_terms:ir.ui.view,arch_db:afag_eos.hr_eos_reason_form_view
+msgid "e.g. Employee Resignation"
+msgstr "إستغالة"

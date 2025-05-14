@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+	<record id="reason_1" model="hr.eos.reason">
+		<field name="name">End of the Contract</field>
+		<field name="type">end_of_contract</field>
+	</record>
+
+	<record id="reason_2" model="hr.eos.reason">
+		<field name="name">Resignation</field>
+		<field name="type">resignation</field>
+	</record>
+
+	<record id="reason_3" model="hr.eos.reason">
+		<field name="name">End Contract Article 80</field>
+		<field name="type">no_compensation</field>
+	</record>
+
+	<record id="reason_5" model="hr.eos.reason">
+		<field name="name">End of Probation Period</field>
+		<field name="type">no_compensation</field>
+	</record>
+
+	<record id="reason_6" model="hr.eos.reason">
+		<field name="name">End of Contract By Both Parties Agreement</field>
+		<field name="type">end_of_contract</field>
+	</record>
+
+	<record id="reason_7" model="hr.eos.reason">
+		<field name="name">The worker left work for one of the cases mentioned in Article 81</field>
+		<field name="type">end_of_contract</field>
+	</record>
+
+	<record id="reason_8" model="hr.eos.reason">
+		<field name="name">Leaving work as a result of force majeure</field>
+		<field name="type">end_of_contract</field>
+	</record>
+
+	<record id="reason_9" model="hr.eos.reason">
+		<field name="name">The worker terminates the work contract within six months of the marriage contract or within three months of giving birth</field>
+		<field name="type">end_of_contract</field>
+	</record>
+
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--      <record id="journal_commission" model="account.journal">-->
+<!--        <field name="name">Commission</field>-->
+<!--        <field name="code">COM</field>-->
+<!--        <field name="type">miscellaneous</field>-->
+<!--        <field name="currency_id" eval="user.company_id.currency_id.id"/>-->
+<!--      </record>-->
+    </data>
+</odoo>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+<!--	<record id="hr_leave_view_form" model="ir.ui.view">-->
+<!--		<field name="name">hr.leave.view.form</field>-->
+<!--		<field name="model">hr.leave</field>-->
+<!--		<field name="inherit_id" ref="hr_holidays.hr_leave_view_form" />-->
+<!--		<field name="arch" type="xml">-->
+<!--			<xpath expr="//sheet/group[1]" position="before">-->
+<!--				<div class="oe_title">-->
+<!--					<h1>-->
+<!--						<field name="number" />-->
+<!--					</h1>-->
+<!--				</div>-->
+<!--			</xpath>-->
+<!--			<xpath expr="//field[@name='user_id']" position="after">-->
+<!--				<field name="attachment_ids" widget="many2many_binary" attrs="{'readonly': [('state', 'not in', ('draft', 'confirm'))]}"/>-->
+<!--				<field name="balance" readonly="1"/>-->
+<!--			</xpath>-->
+<!--		</field>-->
+<!--	</record>-->
+
+	<record id="hr_leave_view_form_inherit" model="ir.ui.view">
+		<field name="name">hr.leave.view.form.inherit</field>
+		<field name="model">hr.leave</field>
+		<field name="inherit_id" ref="hr_holidays.hr_leave_view_form_manager" />
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='name']" position="before">
+				<field name="is_lost" widget="boolean_toggle"/>
+			</xpath>
+		</field>
+	</record>
+
+</odoo>

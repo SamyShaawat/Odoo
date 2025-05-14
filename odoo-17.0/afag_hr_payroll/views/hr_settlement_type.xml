@@ -1,0 +1,45 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="hr_settlement_form">
+      <field name="name">hr_settlement_form</field>
+      <field name="model">hr.settlement.type</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group cols="4">
+              <field name="name" required="1"/>
+              <field name="type" required="1"/>
+              <field name="salary_rule_id"/>
+              <field name="code"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="hr_settlement_list">
+      <field name="name">hr_settlement_list</field>
+      <field name="model">hr.settlement.type</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="type"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="hr_settlement_action_window">
+      <field name="name">Settlement Type</field>
+      <field name="res_model">hr.settlement.type</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem name="Settlement Type" id="hr_settlement_type_menu" action="hr_settlement_action_window" sequence='100' parent="hr_payroll.menu_hr_salary_configuration"/>
+
+  </data>
+</odoo>

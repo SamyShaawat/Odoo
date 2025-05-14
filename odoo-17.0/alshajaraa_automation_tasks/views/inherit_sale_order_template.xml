@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sale_order_template_inherit" model="ir.ui.view">
+        <field name="name">sale.order.template.inherit</field>
+        <field name="model">sale.order.template</field>
+        <field name="inherit_id" ref="sale_management.sale_order_template_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sale_order_template_line_ids']/tree/field[@name='product_id']" position="after">
+                <field name="months" widget="many2many_tags"
+                       options="{'no_edit': True, 'no_create': True,'no_open': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

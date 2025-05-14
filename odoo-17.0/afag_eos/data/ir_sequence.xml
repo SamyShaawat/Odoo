@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+	<record id="seq_hr_eos_request" model="ir.sequence" forcecreate="False">
+		<field name="name">Employee End of Service</field>
+		<field name="code">hr.eos.request</field>
+		<field name="padding">4</field>
+		<field name="prefix">EOS</field>
+		<field name="company_id" eval="False" />
+	</record>
+</odoo>

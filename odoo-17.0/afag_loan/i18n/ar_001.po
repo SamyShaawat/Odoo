@@ -1,0 +1,638 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* afag_loan
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-01 11:58+0000\n"
+"PO-Revision-Date: 2024-11-01 11:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: afag_loan
+#. odoo-python
+#: code:addons/afag_loan/models/hr_employee.py:0
+#, python-format
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                           Click to Create for New Loan\n"
+"                        </p>"
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__message_needaction
+msgid "Action Needed"
+msgstr "الإجراءات اللازمة"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__activity_ids
+msgid "Activities"
+msgstr "أنشطة"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "نشاط استثناء الديكور"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "رمز نوع النشاط"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan_line__amount
+#: model:ir.model.fields,help:afag_loan.field_hr_loan_line__amount
+msgid "Amount"
+msgstr "كمية"
+
+#. module: afag_loan
+#: model_terms:ir.ui.view,arch_db:afag_loan.hr_loan_view_form
+msgid "Approve"
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields.selection,name:afag_loan.selection__hr_loan__state__approve
+msgid "Approved"
+msgstr "وافق"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__balance_amount
+msgid "Balance Amount"
+msgstr "مقدار وسطي"
+
+#. module: afag_loan
+#: model_terms:ir.ui.view,arch_db:afag_loan.hr_loan_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields.selection,name:afag_loan.selection__hr_loan__state__cancel
+msgid "Canceled"
+msgstr "ملغي"
+
+#. module: afag_loan
+#: model_terms:ir.actions.act_window,help:afag_loan.hr_loan_action
+msgid "Click to create a new Loan request."
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__company_id
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: afag_loan
+#: model_terms:ir.ui.view,arch_db:afag_loan.hr_loan_view_form
+msgid "Compute Installment"
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__create_uid
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan_line__create_uid
+msgid "Created by"
+msgstr "انشأ من قبل"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__create_date
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan_line__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__currency_id
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__currency_id
+msgid "Currency"
+msgstr "عملة"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__date
+msgid "Date"
+msgstr "تاريخ"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_payslip_input__date_to
+msgid "Date To"
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_payslip_input__date_from
+msgid "Date from"
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__date
+msgid "Date of the loan request"
+msgstr "تاريخ"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__payment_date
+#: model:ir.model.fields,help:afag_loan.field_hr_loan_line__date
+msgid "Date of the payment"
+msgstr "تاريخ الدفع"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__department_id
+#: model_terms:ir.ui.view,arch_db:afag_loan.hr_loan_view_search
+msgid "Department"
+msgstr "القسم"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__loan_lines
+msgid "Details of installment lines associated with the loan."
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__display_name
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan_line__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: afag_loan
+#: model:ir.model.fields.selection,name:afag_loan.selection__hr_loan__state__draft
+msgid "Draft"
+msgstr "مشروع"
+
+#. module: afag_loan
+#: model:ir.model,name:afag_loan.model_hr_employee
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__employee_id
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan_line__employee_id
+#: model:ir.model.fields,help:afag_loan.field_hr_loan_line__employee_id
+#: model_terms:ir.ui.view,arch_db:afag_loan.hr_loan_view_search
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__employee_id
+msgid "Employee Name"
+msgstr "الموظف"
+
+#. module: afag_loan
+#: model:ir.model,name:afag_loan.model_hr_eos_request
+msgid "End Of service request"
+msgstr "طلب إنهاء الخدمة"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_payslip_input__date_to
+msgid "End date for the payslip input."
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__eos_id
+msgid "Eos"
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__message_follower_ids
+msgid "Followers"
+msgstr "متابعون"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "(المتابعون (الشركاء"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "رمز الخط الرائع ، على سبيل المثال FA- المهام"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__has_message
+msgid "Has Message"
+msgstr "رسالة"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__id
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan_line__id
+msgid "ID"
+msgstr "هوية شخصية"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__activity_exception_icon
+msgid "Icon"
+msgstr "أيقونة"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ".أيقونة للإشارة إلى نشاط استثناء"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ".إذا تم تحديد ذلك ، فإن الرسائل الجديدة تتطلب اهتمامك"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__message_has_error
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ".إذا تم التحقق ، فبعض الرسائل بها خطأ في التسليم"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan_line__paid
+msgid "Indicates whether the installment has been paid."
+msgstr "دفع"
+
+#. module: afag_loan
+#: model:ir.model,name:afag_loan.model_hr_loan_line
+msgid "Installment Line"
+msgstr "خط التقسيط"
+
+#. module: afag_loan
+#: model_terms:ir.ui.view,arch_db:afag_loan.hr_loan_view_form
+msgid "Installments"
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__message_is_follower
+msgid "Is Follower"
+msgstr "هو تابع"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__job_position
+msgid "Job Position"
+msgstr "وظيفه"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__job_position
+msgid "Job position of the employee"
+msgstr "وظيفه"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__write_uid
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__write_date
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: afag_loan
+#. odoo-python
+#: code:addons/afag_loan/models/hr_employee.py:0
+#: model:hr.salary.rule,name:afag_loan.hr_rule_loan
+#: model:ir.ui.menu,name:afag_loan.hr_loan_menu_root
+#: model_terms:ir.ui.view,arch_db:afag_loan.hr_loan_view_search
+#, python-format
+msgid "Loan"
+msgstr "القروض والسلفيات"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__loan_amount
+msgid "Loan Amount"
+msgstr "مبلغ القرض"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_employee__loan_count
+msgid "Loan Count"
+msgstr "عدد القروض"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_payslip_input__loan_line_id
+msgid "Loan Installment"
+msgstr "قرض القسط"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__loan_lines
+msgid "Loan Line"
+msgstr "خط القرض"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__name
+msgid "Loan Name"
+msgstr "اسم القرض"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan_line__loan_id
+msgid "Loan Ref."
+msgstr ".مرجع القرض"
+
+#. module: afag_loan
+#: model:ir.model,name:afag_loan.model_hr_loan
+#: model_terms:ir.ui.view,arch_db:afag_loan.hr_loan_view_form
+msgid "Loan Request"
+msgstr "طلب قرض"
+
+#. module: afag_loan
+#: model_terms:ir.ui.view,arch_db:afag_loan.hr_loan_view_tree
+msgid "Loan Requests"
+msgstr "طلبات القروض"
+
+#. module: afag_loan
+#: model:hr.salary.rule,name:afag_loan.loan_settlement_salary_rule
+#: model_terms:ir.ui.view,arch_db:afag_loan.hr_eos_request_form_view
+msgid "Loan Settlement"
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__loan_amount
+msgid "Loan amount"
+msgstr "مبلغ القرض"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_payslip_input__loan_line_id
+msgid "Loan installment associated with this payslip input."
+msgstr "قسط القرض"
+
+#. module: afag_loan
+#: model:ir.actions.act_window,name:afag_loan.act_hr_employee_loan_request
+#: model_terms:ir.ui.view,arch_db:afag_loan.view_employee_form
+msgid "Loans"
+msgstr "القروض"
+
+#. module: afag_loan
+#: model:ir.ui.menu,name:afag_loan.hr_loan_menu_menu_item
+msgid "Loans & Advances"
+msgstr "الطلبات"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__message_ids
+msgid "Messages"
+msgstr "رسائل"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: afag_loan
+#: model_terms:ir.ui.view,arch_db:afag_loan.hr_loan_view_search
+msgid "My Requests"
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__name
+msgid "Name of the loan"
+msgstr "اسم القرض"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "النشاط التالي حدث التقويم"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "آخر نشاط الموعد النهائي"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__installment
+msgid "No Of Installments"
+msgstr "عدد الاقساط"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الاخطاء"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__installment
+msgid "Number of installments"
+msgstr "عدد الاقساط"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_employee__loan_count
+msgid "Number of loans associated with the employee"
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل مع خطأ التسليم"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan_line__paid
+msgid "Paid"
+msgstr "دفع"
+
+#. module: afag_loan
+#: model:ir.model,name:afag_loan.model_hr_payslip
+msgid "Pay Slip"
+msgstr "إيصال الدفع "
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan_line__date
+msgid "Payment Date"
+msgstr "موعد الدفع"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__payment_date
+msgid "Payment Start Date"
+msgstr "تاريخ بدء الدفع"
+
+#. module: afag_loan
+#: model:ir.model,name:afag_loan.model_hr_payslip_input
+msgid "Payslip Input"
+msgstr "مدخل إيصال الدفع "
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan_line__payslip_id
+msgid "Payslip Ref."
+msgstr ".كشوف المرتبات"
+
+#. module: afag_loan
+#. odoo-python
+#: code:addons/afag_loan/models/hr_loan.py:0
+#, python-format
+msgid "Please Compute installment"
+msgstr "يرجى حساب الدفعة"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan_line__loan_id
+msgid "Reference to the associated loan."
+msgstr "قرض"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan_line__payslip_id
+msgid "Reference to the associated payslip, if any."
+msgstr "قسيمة الراتب"
+
+#. module: afag_loan
+#: model_terms:ir.ui.view,arch_db:afag_loan.hr_loan_view_form
+msgid "Refuse"
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields.selection,name:afag_loan.selection__hr_loan__state__refuse
+msgid "Refused"
+msgstr "رفض"
+
+#. module: afag_loan
+#: model:ir.actions.act_window,name:afag_loan.hr_loan_action
+#: model:ir.ui.menu,name:afag_loan.hr_loan_menu_requests
+msgid "Request for Loan"
+msgstr "طلب سلفة"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_payslip_input__date_from
+msgid "Start date for the payslip input."
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__state
+msgid "State"
+msgstr "حالة"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__state
+msgid "State of the loan request"
+msgstr ""
+
+#. module: afag_loan
+#: model_terms:ir.ui.view,arch_db:afag_loan.hr_loan_view_search
+msgid "Status"
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الوضع القائم على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق مرت بالفعل\n"
+"اليوم: تاريخ النشاط اليوم\n"
+"تنظيم: الأنشطة المستقبلية."
+
+#. module: afag_loan
+#: model_terms:ir.ui.view,arch_db:afag_loan.hr_loan_view_form
+msgid "Submit"
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields.selection,name:afag_loan.selection__hr_loan__state__waiting_approval_1
+msgid "Submitted"
+msgstr "قدمت"
+
+#. module: afag_loan
+#. odoo-python
+#: code:addons/afag_loan/models/hr_loan.py:0
+#, python-format
+msgid "The Employee has already a pending installment"
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__department_id
+msgid "The department to which the employee belongs."
+msgstr "الموظف"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__balance_amount
+msgid ""
+"The remaining balance amount of the \n"
+"                                  loan after deducting \n"
+"                                  the total paid amount."
+msgstr "مقدار وسطي"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__total_amount
+msgid "The total amount of the loan"
+msgstr "إجمالي مبلغ القرض"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__total_paid_amount
+msgid "The total amount that has been paid towards the loan."
+msgstr "إجمالي المبلغ المدفوع"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__total_amount
+msgid "Total Amount"
+msgstr "المبلغ الإجمالي"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__total_paid_amount
+msgid "Total Paid Amount"
+msgstr "إجمالي المبلغ المدفوع"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ".نوع نشاط الاستثناء في السجل"
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_eos_request__unpaid_loan
+msgid "Unpaid Loan"
+msgstr ""
+
+#. module: afag_loan
+#: model_terms:ir.actions.act_window,help:afag_loan.hr_loan_action
+msgid "Use this menu to create loan requests."
+msgstr ""
+
+#. module: afag_loan
+#: model:ir.model.fields,field_description:afag_loan.field_hr_loan__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: afag_loan
+#: model:ir.model.fields,help:afag_loan.field_hr_loan__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصالات الموقع"
+
+#. module: afag_loan
+#. odoo-python
+#: code:addons/afag_loan/models/hr_loan.py:0
+#, python-format
+msgid "You cannot delete a loan which is not in draft or cancelled state"
+msgstr ""

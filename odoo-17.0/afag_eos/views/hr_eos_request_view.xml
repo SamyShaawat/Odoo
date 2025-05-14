@@ -1,0 +1,106 @@
+<odoo>
+  <data>
+
+    <record id="hr_eos_request_form_view" model="ir.ui.view">
+      <field name="name">hr.eos.request.view.form</field>
+      <field name="model">hr.eos.request</field>
+      <field name="arch" type="xml">
+          <form string="End of Service reasons">
+              <header>
+                  <field name="state" widget="statusbar" />
+                  <button name="action_draft" string="Set to Draft" type="object" class="oe_highlight" invisible="state == 'draft'"/>
+                  <button name="action_confirm" string="Confirm" type="object" class="oe_highlight" invisible="state != 'draft'"/>
+                  <button name="action_payslip" string="Generate Payslip" type="object" class="oe_highlight" invisible="state != 'confirm'"/>
+                  <button name="action_approve" string="Approve" type="object" class="oe_highlight" invisible="state != 'paid'"/>
+              </header>
+              <sheet>
+                     <div class="oe_button_box" name="button_box">
+                        <button name="action_open_payslip" type="object" class="oe_stat_button" icon="fa-money">
+                            <field name="payslip_net_amount" string="Pay Slip" widget="statinfo"/>
+                        </button>
+                    </div>
+                  <div class="oe_title">
+                      <label for="name"/>
+                      <h1>
+                          <field name="name"/>
+                      </h1>
+                  </div>
+                  <group>
+                      <group>
+                        <field name="employee_id" required="1"/>
+                        <field name="company_id"/>
+                        <field name="parent_id"/>
+                        <field name="department_id"/>
+                        <field name="job_id"/>
+                      </group>
+                      <group>
+                        <field name="join_date" />
+                        <field name="date" required="1"/>
+                        <field name="reason_id" required="1"/>
+                        <field name="eos_structure_id" readonly="1"/>
+                        <field name="contract_id"/>
+                      </group>
+                      <group name = "eos_compensation" string="EOS Compensation">
+                          <field name="total_salary" />
+                          <field name="unpaid_leave" />
+                          <field name="deduct_unpaid" widget="boolean_toggle"/>
+                          <label for="service_years" string="Years of Service"/>
+                          <div>
+                              <div>
+                                  <field name="service_years" class="oe_inline"/>
+                                  Years,
+                                  <field name="service_months" class="oe_inline"/>
+                                  Months,
+                                  <field name="service_days" class="oe_inline"/>
+                                  Days
+                              </div>
+                          </div>
+                          <field name="remaining_leaves" />
+                          <field name="leave_compensation" />
+                          <field name="article_77" />
+                          <field name="article_77_compensation" invisible="article_77 != True"/>
+                          <field name="eos_amount" />
+                      </group>
+                  </group>
+                  <group>
+                      <field name="notes"/>
+                  </group>
+              </sheet>
+              <div class="oe_chatter">
+                  <field name="message_follower_ids" groups="base.group_user" options="{'post_refresh': 'recipients'}"/>
+                  <field name="activity_ids"/>
+                  <field name="message_ids"/>
+              </div>
+          </form>
+      </field>
+    </record>
+
+    <record id="hr_eos_request_view_tree" model="ir.ui.view">
+        <field name="name">hr.eos.request.tree</field>
+        <field name="model">hr.eos.request</field>
+        <field name="arch" type="xml">
+            <tree string="Eos Requests">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="company_id" optional="hide"/>
+                <field name="reason_id"/>
+                <field name="eos_amount"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="hr_eos_request_action_window">
+      <field name="name">End Of service Request</field>
+      <field name="res_model">hr.eos.request</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- menu categories -->
+
+    <menuitem name="Request" id="eos_request_main_menu_item" parent="hr_eos_menu_root" sequence="1"/>
+    <menuitem name="Eos Request" id="eos_request_menu_item" parent="eos_request_main_menu_item" action="hr_eos_request_action_window" groups="base.group_user"/>
+
+  </data>
+</odoo>

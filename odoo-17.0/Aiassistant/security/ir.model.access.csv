@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_agent,agent,model_agent,,1,1,1,1
+access_appointment_model,appointment_model,model_appointment_model,,1,1,1,1
+access_clinic_model,clinic_model,model_clinic_model,,1,1,1,1
+access_whatsapp_msg,whatsapp_msg,model_whatsapp_msg,,1,1,1,1
+access_whatsapp_profile,whatsapp_profile,model_whatsapp_profile,,1,1,1,1
+access_whatsapp_message_script,whatsapp_message_script,model_whatsapp_message_script,,1,1,1,1
+access_whatsapp_send_message,whatsapp_send_message,model_whatsapp_send_message,,1,1,1,1
+access_whatsapp_message_script_message,whatsapp_message_script_message,model_whatsapp_message_script_message,,1,1,1,1

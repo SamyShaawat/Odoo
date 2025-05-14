@@ -1,0 +1,42 @@
+<odoo>
+  <data>
+
+    <record id="hr_eos_reason_form_view" model="ir.ui.view">
+      <field name="name">hr.eos.reason.view.form</field>
+      <field name="model">hr.eos.reason</field>
+      <field name="arch" type="xml">
+          <form string="End of Service reasons">
+              <sheet>
+                  <div class="oe_title">
+                      <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" required="1" placeholder="e.g. Employee Resignation"/>
+                        </h1>
+                      </div>
+                  <group>
+                    <field name="type" required="1"/>
+                  </group>
+              </sheet>
+          </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="hr_eos_reason_action_window">
+      <field name="name">End Of service reason</field>
+      <field name="res_model">hr.eos.reason</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="End Of Service" id="hr_eos_menu_root" web_icon="afag_eos,static/description/icon.png" groups="afag_eos.group_hr_eos_manager"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Configuration" id="eos_configuration_menu_item" parent="hr_eos_menu_root" sequence="2"/>
+    <menuitem name="End of service Reason" id="eos_reason_menu_item" parent="eos_configuration_menu_item" action="hr_eos_reason_action_window" />
+
+  </data>
+</odoo>

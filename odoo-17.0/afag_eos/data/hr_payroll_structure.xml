@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="structure_worker_eos" model="hr.payroll.structure">
+        <field name="name">Eos Structure</field>
+        <field name="type_id" ref="hr_contract.structure_type_worker"/>
+        <field name="country_id" eval="False"/>
+        <field name="is_eos" eval="True"/>
+    </record>
+
+        <!--default salary rules -->
+    <record id="eos_compensation_salary_rule" model="hr.salary.rule">
+        <field name="category_id" ref="hr_payroll.ALW"/>
+        <field name="name">Eos Compensation</field>
+        <field name="sequence">1</field>
+        <field name="code">EOSCOMP</field>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+result = payslip.eos_id.eos_amount
+        </field>
+        <field name="struct_id" ref="afag_eos.structure_worker_eos"/>
+    </record>
+
+    <record id="leave_compensation_salary_rule" model="hr.salary.rule">
+        <field name="category_id" ref="hr_payroll.ALW"/>
+        <field name="name">Leave Compensation</field>
+        <field name="sequence">2</field>
+        <field name="code">LEAVECOMP</field>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+result = payslip.eos_id.leave_compensation
+        </field>
+        <field name="struct_id" ref="afag_eos.structure_worker_eos"/>
+    </record>
+
+    <record id="article77_compensation_salary_rule" model="hr.salary.rule">
+        <field name="category_id" ref="hr_payroll.ALW"/>
+        <field name="name">Article 77 Compensation</field>
+        <field name="sequence">3</field>
+        <field name="code">ART77</field>
+        <field name="condition_select">none</field>
+        <field name="amount_select">code</field>
+        <field name="amount_python_compute">
+result = payslip.eos_id.article_77_compensation
+        </field>
+        <field name="struct_id" ref="afag_eos.structure_worker_eos"/>
+    </record>
+
+    <record id="eos_net_salary" model="hr.salary.rule">
+            <field name="category_id" ref="hr_payroll.NET"/>
+            <field name="name">Net EOS</field>
+            <field name="sequence">5</field>
+            <field name="code">NETEOS</field>
+            <field name="appears_on_employee_cost_dashboard">False</field>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">
+result = categories['ALW'] - categories['DED']
+            </field>
+            <field name="struct_id" ref="afag_eos.structure_worker_eos"/>
+    </record>
+</odoo>
