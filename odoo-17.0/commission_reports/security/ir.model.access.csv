@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_commission_details_report_user,commission.details.report,model_commission_details_report,base.group_user,1,1,1,1
+access_commission_total_report_user,commission.total.report,model_commission_total_report,base.group_user,1,1,1,1
+access_commission_endof_day_report_user,commission.endof.day.report,model_commission_endof_day_report,base.group_user,1,1,1,1
+access_commission_endof_year_report_user,commission.endof.year.report,model_commission_endof_year_report,base.group_user,1,1,1,1

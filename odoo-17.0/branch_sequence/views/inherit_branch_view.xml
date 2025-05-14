@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+          <record id="branch_res_branch_view_form_inherit" model="ir.ui.view">
+            <field name="name">branch.res.branch.view.form</field>
+            <field name="model">res.branch</field>
+            <field name="inherit_id" ref="branch.branch_res_branch_view_form"/>
+            <field name="arch" type="xml">
+                    <xpath expr="//form/sheet/group/group[1]" position="after">
+                        <group>
+                        <field name="sequence_applied"/>
+                        <field name="pre_sequence_branch"/>
+                        </group>
+                    </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

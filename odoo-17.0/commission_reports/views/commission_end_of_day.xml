@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_commission_end_of_day_line">
+        <t t-foreach="lines" t-as="l">
+            <tr class="o_data_row">
+                <!-- User-->
+                <td class="o_data_cell o_field_cell o_list_char o_readonly_modifier">
+                    <span t-esc="l['user']"/>
+                </td>
+                <!-- Date-->
+                <td class="o_data_cell o_field_cell o_list_char o_readonly_modifier">
+                    <span t-esc="l['date']"/>
+                </td>
+                <!-- Orders-->
+                <td class="o_data_cell o_field_cell o_list_number o_monetary_cell">
+                    <span class="o_field_monetary o_field_number o_field_widget o_quick_editable text-bf"
+                          t-esc="l['orders']"/>
+                </td>
+                <!-- Lines-->
+                <td class="o_data_cell o_field_cell o_list_number o_monetary_cell">
+                    <span class="o_field_monetary o_field_number o_field_widget o_quick_editable text-bf"
+                          t-esc="l['lines']"/>
+                </td>
+                <!-- Amount-->
+                <td class="o_data_cell o_field_cell o_list_number o_monetary_cell">
+                    <span class="o_field_monetary o_field_number o_field_widget o_quick_editable text-bf"
+                          t-esc="l['amount']"/>
+                </td>
+                <!-- Cost-->
+                <td class="o_data_cell o_field_cell o_list_number o_monetary_cell">
+                    <span class="o_field_monetary o_field_number o_field_widget o_quick_editable text-bf"
+                          t-esc="l['cost']"/>
+                </td>
+            </tr>
+        </t>
+    </template>
+
+    <template id="report_commission_end_of_day">
+        <div class="container-fluid o_commission_reports_page o_commission_reports_no_print">
+            <t t-if="not lines">
+                <span class="text-center">
+                    <h1>No Records found</h1>
+                </span>
+            </t>
+            <t t-if="lines">
+                <div class="table-responsive">
+                    <table class="table table-sm o_list_table table table-sm table-hover table-striped "
+                           style="table-layout:auto">
+                        <thead>
+                            <tr>
+                                <th class="text-left">User</th>
+                                <th class="text-left">Date</th>
+                                <th class="o_monetary_cell o_list_number_th">Orders</th>
+                                <th class="o_monetary_cell o_list_number_th">Lines</th>
+                                <th class="o_monetary_cell o_list_number_th">Amount</th>
+                                <th class="o_monetary_cell o_list_number_th">Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-call="commission_reports.report_commission_end_of_day_line"/>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </div>
+    </template>
+
+
+    <template id="report_commission_end_of_day_print">
+        <html>
+            <head>
+                <base t-att-href="base_url"/>
+                <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+                <t t-call-assets="commission_reports.assets_commission_reports" t-js="False"/>
+            </head>
+            <body class="o_account_reports_body_print">
+                <br/>
+                <span t-if="lines" align="center" class="o_report_heading">
+                    <h4>End Of Day</h4>
+                </span>
+                <div class="o_row col-12">
+                    <div class="col-10 text-right">Date:
+                        <span t-esc="context['options']['date_to']"/>
+                    </div>
+                    <div class="col-2">
+                    </div>
+                </div>
+                <br/>
+                <t t-call="commission_reports.report_commission_end_of_day"/>
+            </body>
+        </html>
+    </template>
+</odoo>

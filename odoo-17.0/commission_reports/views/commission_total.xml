@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_commission_total_line">
+        <t t-foreach="lines" t-as="l">
+            <tr class="o_data_row">
+                <td class="o_data_cell o_field_cell o_list_char o_readonly_modifier o_required_modifier">
+                    <span t-esc="l['salesman_name']"/>
+                </td>
+                <td class="o_data_cell o_field_cell o_list_number o_monetary_cell o_readonly_modifier">
+                    <span class="o_field_monetary o_field_number o_field_widget o_quick_editable text-bf o_readonly_modifier"
+                          t-esc="l['list_price']"/>
+                </td>
+                <td class="o_data_cell o_field_cell o_list_number o_monetary_cell o_readonly_modifier">
+                    <span class="o_field_monetary o_field_number o_field_widget o_quick_editable text-bf o_readonly_modifier"
+                          t-esc="l['discount_amount']"/>
+                </td>
+                <td class="o_data_cell o_field_cell o_list_number o_monetary_cell o_readonly_modifier">
+                    <span class="o_field_monetary o_field_number o_field_widget o_quick_editable text-bf o_readonly_modifier"
+                          t-esc="l['sold_price']"/>
+                </td>
+                <td class="o_data_cell o_field_cell o_list_number o_monetary_cell o_readonly_modifier">
+                    <span class="o_field_monetary o_field_number o_field_widget o_quick_editable text-bf o_readonly_modifier"
+                          t-esc="l['loaded_cost']"/>
+                </td>
+                <td class="o_data_cell o_field_cell o_list_number o_monetary_cell o_readonly_modifier">
+                    <span class="o_field_monetary o_field_number o_field_widget o_quick_editable text-bf o_readonly_modifier"
+                          t-esc="l['commission_earned']"/>
+                </td>
+                <td class="o_data_cell o_field_cell o_list_number o_monetary_cell o_readonly_modifier">
+                    <span class="o_field_monetary o_field_number o_field_widget o_quick_editable text-bf o_readonly_modifier"
+                          t-esc="l['profit_price']"/>
+                </td>
+                <td class="o_data_cell o_field_cell o_list_number o_monetary_cell o_readonly_modifier">
+                    <span class="o_field_monetary o_field_number o_field_widget o_quick_editable text-bf o_readonly_modifier"
+                          t-esc="l['profit_percentage']"/>
+                </td>
+            </tr>
+        </t>
+    </template>
+
+    <template id="report_commission_total">
+        <div class="container-fluid o_commission_reports_page o_commission_reports_no_print">
+            <t t-if="not lines">
+                <span class="text-center">
+                    <h1>No Records found</h1>
+                </span>
+            </t>
+            <t t-if="lines">
+                <div class="table-responsive">
+                    <table class="table table-sm o_list_table table table-sm table-hover table-striped "
+                           style="table-layout:auto">
+                        <thead>
+                            <tr>
+                                <th class="text-left">Rep. Name</th>
+                                <th class="o_monetary_cell o_list_number_th">List Price</th>
+                                <th class="o_monetary_cell o_list_number_th">Discount</th>
+                                <th class="o_monetary_cell o_list_number_th">Sold Price</th>
+                                <th class="o_monetary_cell o_list_number_th">Loaded Cost</th>
+                                <th class="o_monetary_cell o_list_number_th">Calculated Comm</th>
+                                <th class="o_monetary_cell o_list_number_th">Profit$</th>
+                                <th class="o_monetary_cell o_list_number_th">Profit%</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-call="commission_reports.report_commission_total_line"/>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </div>
+    </template>
+
+    <template id="report_commission_total_print">
+        <html>
+            <head>
+                <base t-att-href="base_url"/>
+                <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+                <t t-call-assets="commission_reports.assets_commission_reports" t-js="False"/>
+            </head>
+            <body class="o_account_reports_body_print">
+                <br/>
+                <span t-if="lines" align="center" class="o_report_heading">
+                    <h4>Commissions Total</h4>
+                </span>
+                <div class="o_row col-12">
+                    <div class="col-11 text-right">Date From:
+                        <span class="mr-2" t-esc="context['options']['date_from']"/>
+                        Date To:
+                        <span class="mr-2" t-esc="context['options']['date_to']"/>
+                    </div>
+                    <div class="col-1">
+                    </div>
+                </div>
+                <br/>
+                <t t-call="commission_reports.report_commission_total"/>
+            </body>
+        </html>
+    </template>
+
+</odoo>

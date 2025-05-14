@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+
+    <t t-name="commission_reports.commission_details_buttons">
+        <button type="button" class='btn btn-primary js_report_commission_details_pdf'>Pdf</button>
+        <button type="button" class='btn btn-primary js_report_commission_details_xlsx'>Excel</button>
+    </t>
+
+    <form class="form-row" t-name="commission_reports.commission_details_searchview_buttons">
+        <label class="custom-date mr-1" for="filter_by">Filter By :</label>
+        <div class="form-group mr-2">
+            <select class="o_input" name="filter_by">
+                <option value="x_studio_date_of_full_payment" t-att-selected="options['filter_by'] === 'x_studio_date_of_full_payment' ? 'selected' : None">Date of Full Payment</option>
+                <option value="invoice_date" t-att-selected="options['filter_by'] === 'invoice_date' ? 'selected' : None">Invoice Date</option>
+            </select>
+        </div>
+
+        <label class="custom-date mr-1" for="date_from">Start :</label>
+        <div class="form-group mr-2">
+            <div class='o_datepicker js_commission_reports_datetimepicker'
+                 t-att-data-default-value="options['date_from']">
+                <input type='text' class="o_datepicker_input" name="date_from"/>
+                <span class="o_datepicker_button"/>
+            </div>
+        </div>
+
+        <label class="custom-date mr-1" for="date_to">End :</label>
+        <div class="form-group">
+            <div class='o_datepicker js_commission_reports_datetimepicker'
+                 t-att-data-default-value="options['date_to']">
+                <input type='text' class="o_datepicker_input" name="date_to"/>
+                <span class="o_datepicker_button"/>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-secondary js_commission_report_search_btn" data-filter="custom">
+            <i class="fa fa-search"/>
+        </button>
+    </form>
+
+</templates>

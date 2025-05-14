@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="action_commission_details_client" model="ir.actions.client">
+            <field name="name">Commission Details</field>
+            <field name="tag">commission_details_client</field>
+            <field name="context" eval="{}"/>
+        </record>
+
+        <record id="action_commission_end_of_day_client" model="ir.actions.client">
+            <field name="name">End Of Day</field>
+            <field name="tag">commission_end_of_day_client</field>
+            <field name="context" eval="{}"/>
+        </record>
+
+        <record id="action_commission_end_of_year_client" model="ir.actions.client">
+            <field name="name">End Of Year</field>
+            <field name="tag">commission_end_of_year_client</field>
+            <field name="context" eval="{}"/>
+        </record>
+
+        <record id="action_commission_total_client" model="ir.actions.client">
+            <field name="name">Commission Total</field>
+            <field name="tag">commission_total_client</field>
+            <field name="context" eval="{}"/>
+        </record>
+
+    </data>
+</odoo>

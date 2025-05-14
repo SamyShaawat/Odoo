@@ -1,0 +1,7 @@
+<odoo>
+    <template id="biztech_prod_data_feeds">
+        <t t-raw="feed.header_pattern"/>
+        <t t-raw="feed.final_product_pattern"/>
+        <t t-raw="feed.footer_pattern"/>
+    </template>
+</odoo>

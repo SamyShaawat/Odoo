@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Sequences for sale.order -->
+        <record id="seq_data_feeds" model="ir.sequence">
+            <field name="name">Website Data Feeds</field>
+            <field name="code">website.data.feeds</field>
+            <!-- <field name="prefix">Feeds</field> -->
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>
