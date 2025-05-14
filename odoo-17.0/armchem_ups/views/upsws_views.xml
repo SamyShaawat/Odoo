@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="web_upsws_form" model="ir.ui.view">
+        <field name="name">web.upsws.form</field>
+        <field name="model">web.upsws</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="from_name"/>
+                        <field name="from_addr1"/>
+                        <field name="from_addr2"/>
+                        <field name="from_city"/>
+                        <field name="from_st"/>
+                        <field name="from_postal"/>
+                        <field name="from_country"/>
+                        <field name="customer_no"/>
+                    </group>
+                    <group>
+                        <field name="ship_name"/>
+                        <field name="ship_addr1"/>
+                        <field name="ship_addr2"/>
+                        <field name="ship_city"/>
+                        <field name="ship_st"/>
+                        <field name="ship_postal"/>
+                        <field name="ship_country"/>
+                        <field name="ship_phone"/>
+                        <field name="cust_po"/>
+                    </group>
+                    <group>
+                        <field name="order_no"/>
+                        <field name="order_date"/>
+                        <field name="service"/>
+                        <field name="billing"/>
+                        <field name="pkg_type"/>
+                        <field name="shipper"/>
+                        <field name="order_lne"/>
+                        <field name="item_code"/>
+                        <field name="weight"/>
+                    </group>
+                    <group>
+                        <field name="tpcustno"/>
+                        <field name="tpname"/>
+                        <field name="tpaddr1"/>
+                        <field name="tpaddr2"/>
+                        <field name="tpcity"/>
+                        <field name="tpstate"/>
+                        <field name="tpcountry"/>
+                        <field name="tppostal"/>
+                        <field name="tpphone"/>
+                        <field name="tpfax"/>
+                        <field name="tpupsno"/>
+                    </group>
+                    <group>
+                        <field name="dbldimensionl"/>
+                        <field name="dbldimensionw"/>
+                        <field name="dbldimensionh"/>
+                        <field name="attention"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="web_upsws_tree" model="ir.ui.view">
+        <field name="name">web.upsws.tree</field>
+        <field name="model">web.upsws</field>
+        <field eval="100" name="priority"/>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="from_name"/>
+                <field name="from_addr1"/>
+                <field name="from_addr2"/>
+                <field name="from_city"/>
+                <field name="from_st"/>
+                <field name="from_postal"/>
+                <field name="from_country"/>
+                <field name="order_no"/>
+                <field name="customer_no"/>
+                <field name="ship_name"/>
+                <field name="ship_addr1"/>
+                <field name="ship_addr2"/>
+                <field name="ship_city"/>
+                <field name="ship_st"/>
+                <field name="ship_postal"/>
+                <field name="ship_country"/>
+                <field name="ship_phone"/>
+                <field name="cust_po"/>
+                <field name="service"/>
+                <field name="billing"/>
+                <field name="pkg_type"/>
+                <field name="shipper"/>
+                <field name="order_lne"/>
+                <field name="item_code"/>
+                <field name="weight"/>
+                <field name="tpcustno"/>
+                <field name="tpname"/>
+                <field name="tpaddr1"/>
+                <field name="tpaddr2"/>
+                <field name="tpcity"/>
+                <field name="tpstate"/>
+                <field name="tpcountry"/>
+                <field name="tppostal"/>
+                <field name="tpphone"/>
+                <field name="tpfax"/>
+                <field name="tpupsno"/>
+                <field name="dbldimensionl"/>
+                <field name="dbldimensionw"/>
+                <field name="dbldimensionh"/>
+                <field name="attention"/>
+                <field name="order_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="web_upsws_filter" model="ir.ui.view">
+        <field name="name">web.upsws.select</field>
+        <field name="model">web.upsws</field>
+        <field name="arch" type="xml">
+            <search string="Search Move">
+                <field name="from_name"/>
+                <field name="from_addr1"/>
+                <field name="from_addr2"/>
+                <field name="from_city"/>
+                <field name="from_st"/>
+                <field name="from_postal"/>
+                <field name="from_country"/>
+                <field name="order_no"/>
+                <field name="customer_no"/>
+                <field name="ship_name"/>
+                <field name="ship_addr1"/>
+                <field name="ship_addr2"/>
+                <field name="ship_city"/>
+                <field name="ship_st"/>
+                <field name="ship_postal"/>
+                <field name="ship_country"/>
+                <field name="ship_phone"/>
+                <field name="cust_po"/>
+                <field name="service"/>
+                <field name="billing"/>
+                <field name="pkg_type"/>
+                <field name="shipper"/>
+                <field name="order_lne"/>
+                <field name="item_code"/>
+                <field name="weight"/>
+                <field name="tpcustno"/>
+                <field name="tpname"/>
+                <field name="tpaddr1"/>
+                <field name="tpaddr2"/>
+                <field name="tpcity"/>
+                <field name="tpstate"/>
+                <field name="tpcountry"/>
+                <field name="tppostal"/>
+                <field name="tpphone"/>
+                <field name="tpfax"/>
+                <field name="tpupsno"/>
+                <field name="dbldimensionl"/>
+                <field name="dbldimensionw"/>
+                <field name="dbldimensionh"/>
+                <field name="attention"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_web_upsws" model="ir.actions.act_window">
+        <field name="name">UPSWS</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">web.upsws</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="armchem_product_pricelist_item_form_view" model="ir.ui.view">
+            <field name="name">armchem.product.pricelist.item.form.inherit</field>
+            <field name="model">product.pricelist.item</field>
+            <field name="priority">5</field>
+            <field name="inherit_id" ref="product.product_pricelist_item_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='pricelist_rule_limits']/field[@name='date_end']" position="after">
+                    <label for="commission_percent" invisible="applied_on != '1_product'"/>
+                    <div name="commission_percent" invisible="applied_on != '1_product'">
+                        <field name="commission_percent" class="oe_inline"/>
+                        %
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

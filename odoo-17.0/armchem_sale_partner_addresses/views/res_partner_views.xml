@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="armchem_view_partner_addresses_tree" model="ir.ui.view">
+            <field name="name">armchem.res.partner.addresses.tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <field name="city" position="before">
+                    <field name="street"/>
+                    <field name="street2"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="armchem_view_partner_form" model="ir.ui.view">
+            <field name="name">armchem.res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/notebook/page[@name='sales_purchases']//field[@name='user_id']"
+                       position="before">
+                    <field name="credit_limit"/>
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page[@name='contact_addresses']//field[@name='child_ids']"
+                       position="before">
+                    <field name="customer_rank" invisible="1"/>
+                    <field name="supplier_rank" invisible="1"/>
+                    <button string="Add" type="object" name="open_one2many_line" class="oe_edit_only"
+                            context="{
+                            'default_parent_id': active_id,
+                            'default_street': street,
+                            'default_street2': street2,
+                            'default_city': city,
+                            'default_state_id': state_id,
+                            'default_zip': zip,
+                            'default_country_id': country_id,
+                            'default_lang': lang,
+                            'default_user_id': user_id,
+                            'default_type': 'other'}"
+                    ></button>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.server" id="action_open_contacts">
+            <field name="name">Open Contacts</field>
+            <field name="model_id" ref="model_contact_action"/>
+            <field name="state">code</field>
+            <field name="code">action = model.action_open_contacts()</field>
+        </record>
+
+<!--        <delete model="ir.ui.menu" id="contacts.res_partner_menu_contacts"/>-->
+
+        <menuitem id="res_partner_menu_contacts_custom"
+                  name="Contacts"
+                  action="action_open_contacts"
+                  parent="contacts.menu_contacts"
+                  sequence="2"/>
+
+        <menuitem id="sale.res_partner_menu"
+                  parent="sale.sale_order_menu"
+                  action="action_open_contacts"
+                  name="Customers"
+                  sequence="4" groups="sales_team.group_sale_salesman"/>
+
+    </data>
+</odoo>

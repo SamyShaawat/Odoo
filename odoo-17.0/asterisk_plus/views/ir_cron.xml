@@ -1,0 +1,52 @@
+<odoo>
+    <data noupdate="1">
+        <record id="vacuum_channels" model="ir.cron">
+            <field name="name">Vacuum channels</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_asterisk_plus_channel"></field>
+            <field name="code">model.vacuum(hours=24)</field>
+            <field name="state">code</field>
+        </record>
+
+        <record id="vacuum_channel_data" model="ir.cron">
+            <field name="name">Vacuum channel data</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_asterisk_plus_channel_data"></field>
+            <field name="code">model.vacuum(hours=24)</field>
+            <field name="state">code</field>
+        </record>
+
+        <record id="delete_calls" model="ir.cron">
+            <field name="name">Asterisk delete expired calls</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_asterisk_plus_call"/>
+            <field name="code">model.delete_calls()</field>
+            <field name="state">code</field>
+            <field name="nextcall"
+                eval="(datetime.now(pytz.timezone('UTC')) + timedelta(days=1)).strftime('%Y-%m-%d 00:00:01')"/>
+        </record>
+
+        <record id="delete_recordings" model="ir.cron">
+            <field name="name">Asterisk delete expired recordings</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_asterisk_plus_recording"/>
+            <field name="code">model.delete_recordings()</field>
+            <field name="state">code</field>
+            <field name="nextcall"
+                eval="(datetime.now(pytz.timezone('UTC')) + timedelta(days=1)).strftime('%Y-%m-%d 00:00:01')"/>
+        </record>
+
+    </data>
+</odoo>

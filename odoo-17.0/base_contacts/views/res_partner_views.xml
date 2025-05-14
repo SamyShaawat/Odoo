@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field eval="8" name="priority"/>
+            <field name="arch" type="xml">
+                <field name="ref" position="after">
+                    <field name="customer_id" string="CustomerID" readonly="1"
+                           invisible="customer_id == False"/>
+                    <field name="vendor_id" string="VendorID" readonly="1"
+                           invisible="vendor_id == False"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

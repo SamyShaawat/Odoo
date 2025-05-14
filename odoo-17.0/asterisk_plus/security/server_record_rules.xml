@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- PARTNER -->
+    <record id="res_partner_server_rule" model="ir.rule">
+        <field name="name">res_partner_server_rule</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups" eval="[(6, 0, [ref('group_asterisk_server')])]"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+    
+    <!-- SERVER -->
+    <record id="asterisk_plus_server_server_rule" model="ir.rule">
+        <field name="name">asterisk_plus_server_server_rule</field>
+        <field name="model_id" ref="asterisk_plus.model_asterisk_plus_server"/>
+        <field name="groups" eval="[(6, 0, [ref('group_asterisk_server')])]"/>
+        <field name="domain_force">[('user', '=', user.id)]</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <!-- CHANNELS -->
+    <record id="asterisk_plus_channel_server_rule" model="ir.rule">
+        <field name="name">asterisk_plus_channel_server_rule</field>
+        <field name="model_id" ref="asterisk_plus.model_asterisk_plus_channel"/>
+        <field name="groups" eval="[(6, 0, [ref('group_asterisk_server')])]"/>
+        <field name="domain_force">[('server', '=', user.asterisk_server.id)]</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+</odoo>

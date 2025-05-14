@@ -1,0 +1,3 @@
+<odoo>
+    <function name="set_default_api_url" model="asterisk_plus.settings"/>
+</odoo>

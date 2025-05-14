@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo><data>
+<template id="calls_report">
+    <t t-call="web.html_container">
+        <t t-set="data_report_margin_top" t-value="12"/>
+        <t t-set="data_report_header_spacing" t-value="9"/>
+        <t t-set="data_report_dpi" t-value="110"/>
+        <t t-call="web.external_layout">
+            <div class="page">
+                <h2>
+                    <span t-if="title" t-esc="title"/>
+                    <span t-else="">Selected calls</span>
+                </h2>
+                <div t-if="total_calls" class="row mt32">
+                    <div class="col-xs-12 col-md-4"><strong>Total calls: <span t-esc="total_calls"/></strong></div>
+                    <div class="col-xs-12 col-md-4" t-if="fields['duration']"><strong>Total call duration: <span t-esc="total_duration"/></strong></div>
+                </div>
+                <div class="row mt32">
+                    <table class="table table-condensed">
+                        <thead>
+                            <th t-if="fields['started']">Started</th>
+                            <th t-if="fields['calling_name']">Caller ID</th>
+                            <th t-if="fields['calling_number']">Source</th>
+                            <th t-if="fields['called_number']">Destination</th>
+                            <th t-if="fields['calling_user']">From User</th>
+                            <th t-if="fields['answered_user']">To User</th>
+                            <th t-if="fields['partner']">Partner</th>
+                            <th t-if="fields['status']">Status</th>
+                            <th t-if="fields['duration']">Call Duration</th>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="docs" t-as="c">
+                                <td t-if="fields['started']"><span t-esc="c.started"/></td>
+                                <td t-if="fields['calling_name']"><span t-esc="c.calling_name"/></td>
+                                <td t-if="fields['calling_number']"><span t-esc="c.calling_number"/></td>
+                                <td t-if="fields['called_number']"><span t-esc="c.called_number"/></td>
+                                <td t-if="fields['calling_user']"><span t-esc="c.calling_user.name"/></td>
+                                <td t-if="fields['answered_user']"><span t-esc="c.answered_user.name"/></td>
+                                <td t-if="fields['partner']"><span t-if="c.partner" t-esc="c.partner.name"/></td>
+                                <td t-if="fields['status']"><span t-esc="c.status"/></td>
+                                <td t-if="fields['duration']"><span t-esc="c.duration_human"/></td>
+                            </tr>
+                        </tbody>
+                    </table>                    
+                </div>
+            </div>
+        </t>
+    </t>
+</template>
+</data></odoo>

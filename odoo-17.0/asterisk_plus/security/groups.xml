@@ -1,0 +1,30 @@
+<odoo>
+
+    <record id="module_asterisk_category"  model="ir.module.category">
+        <field name="name">PBX</field>
+        <field name="sequence">20</field>
+        <field name="description">Asterisk Plus Security</field>
+    </record>
+
+    <record model="res.groups" id="group_asterisk_server">
+        <field name="name">Server</field>
+        <field name="category_id" ref="asterisk_plus.module_asterisk_category"/>
+    </record>
+
+    <record model="res.groups" id="group_asterisk_admin">
+        <field name="name">Admin</field>
+        <field name="category_id" ref="asterisk_plus.module_asterisk_category"/>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+
+    <record model="res.groups" id="group_asterisk_user">
+        <field name="name">User</field>
+        <field name="category_id" ref="asterisk_plus.module_asterisk_category"/>
+    </record>
+
+    <record model="res.groups" id="group_asterisk_supervisor">
+        <field name="name">Supervisor</field>
+        <field name="category_id" ref="asterisk_plus.module_asterisk_category"/>
+    </record>
+
+</odoo>

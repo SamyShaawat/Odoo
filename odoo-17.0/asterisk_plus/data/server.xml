@@ -1,0 +1,8 @@
+<odoo><data noupdate="1">
+    
+    <record id="default_server" model="asterisk_plus.server">
+        <field name="name">Asterisk</field>
+        <field name="user" ref="asterisk_plus.user_asterisk1"/>
+    </record>    
+
+</data></odoo>

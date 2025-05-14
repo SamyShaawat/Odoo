@@ -1,0 +1,74 @@
+<odoo>
+  <data>
+    <record id="originate_response" model="asterisk_plus.event">
+      <field name="name">OriginateResponse</field>
+      <field name="source">AMI</field>
+      <field name="delay">1</field>
+      <field name="model">asterisk_plus.channel</field>
+      <field name="method">on_ami_originate_response_failure</field>
+      <field name="condition">event['Response'] == 'Failure'</field>
+    </record>
+
+    <record id="hangup" model="asterisk_plus.event">
+      <field name="name">Hangup</field>
+      <field name="source">AMI</field>
+      <field name="model">asterisk_plus.channel</field>
+      <field name="method">on_ami_hangup</field>
+      <field name="delay">0.75</field>
+      <field name="condition">not event['Channel'].startswith('Local/')</field>
+    </record>
+
+    <!-- Primary channel -->
+    <record id="new_channel" model="asterisk_plus.event">
+      <field name="name">Newchannel</field>
+      <field name="source">AMI</field>
+      <field name="model">asterisk_plus.channel</field>
+      <field name="method">on_ami_new_channel</field>
+      <field name="condition">not event['Channel'].startswith('Local/') and event['Uniqueid'] == event['Linkedid']</field>
+    </record>
+    <!-- Secondary channel with a small delay -->
+    <record id="new_channel_secondary" model="asterisk_plus.event">
+      <field name="name">Newchannel</field>
+      <field name="source">AMI</field>
+      <field name="model">asterisk_plus.channel</field>
+      <field name="method">on_ami_new_channel</field>
+      <field name="delay">0.2</field>
+      <field name="condition">not event['Channel'].startswith('Local/') and event['Uniqueid'] != event['Linkedid']</field>
+    </record>
+
+    <record id="new_state" model="asterisk_plus.event">
+      <field name="name">Newstate</field>
+      <field name="source">AMI</field>
+      <field name="model">asterisk_plus.channel</field>
+      <field name="method">on_ami_update_channel_state</field>
+      <field name="delay">0.5</field>
+      <field name="condition">not (event['Channel'].startswith('Local/') or event['ChannelStateDesc'] not in ['Up'])</field>
+    </record>
+
+    <record id="var_set_mixmon" model="asterisk_plus.event">
+      <field name="name">VarSet</field>
+      <field name="source">AMI</field>
+      <field name="model">asterisk_plus.channel</field>
+      <field name="method">update_recording_filename</field>
+      <field name="delay">1.5</field>
+      <field name="condition">event.get('Variable') == 'MIXMONITOR_FILENAME'</field>
+    </record>
+
+    <record id="user_event_set_answered" model="asterisk_plus.event">
+      <field name="name">UserEvent</field>
+      <field name="source">AMI</field>
+      <field name="model">asterisk_plus.call</field>
+      <field name="method">on_user_event_set_answered</field>
+      <field name="condition">event.get('UserEvent') == 'CallAnswered'</field>
+    </record>
+
+    <!-- FastAGI users -->
+    <record id="fagi_users" model="asterisk_plus.event">
+      <field name="name">route_did</field>
+      <field name="source">FAGI</field>
+      <field name="model">asterisk_plus.user</field>
+      <field name="method">fagi_request</field>
+    </record>
+
+  </data>
+</odoo>

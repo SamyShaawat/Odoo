@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <record id="calls_report_action" model="ir.actions.report">
+            <field name="name">Call Report</field>
+            <field name="model">asterisk_plus.call</field>
+            <field name="report_type">qweb-html</field>
+            <field name="report_name">asterisk_plus.calls_report</field>
+            <field name="report_file">asterisk_plus.calls_report</field>
+        </record>
+    </data>
+</odoo>

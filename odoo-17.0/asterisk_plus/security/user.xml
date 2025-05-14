@@ -1,0 +1,120 @@
+<odoo>
+
+<!-- User Channel -->
+<record id="asterisk_plus_user_channels_user" model="ir.model.access">
+    <field name="name">asterisk_plus_user_channels</field>
+    <field name="model_id" ref="asterisk_plus.model_asterisk_plus_user_channel"/>
+    <field name="group_id" ref="asterisk_plus.group_asterisk_user"/>
+    <field name="perm_read" eval="1"/>
+    <field name="perm_write" eval="1"/>
+    <field name="perm_create" eval="1"/>
+    <field name="perm_unlink" eval="1"/>
+</record>
+
+<!-- User -->
+<record id="asterisk_plus_user" model="ir.model.access">
+    <field name="name">asterisk_plus_user</field>
+    <field name="model_id" ref="asterisk_plus.model_asterisk_plus_user"/>
+    <field name="group_id" ref="asterisk_plus.group_asterisk_user"/>
+    <field name="perm_read" eval="1"/>
+    <field name="perm_write" eval="1"/>
+    <field name="perm_create" eval="0"/>
+    <field name="perm_unlink" eval="0"/>
+</record>
+
+<!-- Channel -->
+<record id="asterisk_plus_channel_user" model="ir.model.access">
+    <field name="name">asterisk_plus_channel_user</field>
+    <field name="model_id" ref="asterisk_plus.model_asterisk_plus_channel"/>
+    <field name="group_id" ref="asterisk_plus.group_asterisk_user"/>
+    <field name="perm_read" eval="1"/>
+    <field name="perm_write" eval="1"/>
+    <field name="perm_create" eval="1"/>
+    <field name="perm_unlink" eval="1"/>
+</record>
+
+<!-- Recording -->
+<record id="asterisk_plus_recording_res_user" model="ir.model.access">
+  <field name="name">asterisk_plus_recording_res_user</field>
+  <field name="model_id" ref="asterisk_plus.model_asterisk_plus_recording"/>
+  <field name="group_id" ref="base.group_user"/>
+  <field name="perm_read" eval="1"/>
+  <field name="perm_write" eval="0"/>
+  <field name="perm_create" eval="0"/>
+  <field name="perm_unlink" eval="0"/>
+</record>
+<record id="asterisk_plus_recording_user" model="ir.model.access">
+    <field name="name">asterisk_plus_recording_user</field>
+    <field name="model_id" ref="asterisk_plus.model_asterisk_plus_recording"/>
+    <field name="group_id" ref="asterisk_plus.group_asterisk_user"/>
+    <field name="perm_read" eval="1"/>
+    <field name="perm_write" eval="1"/>
+    <field name="perm_create" eval="0"/>
+    <field name="perm_unlink" eval="0"/>
+</record>
+
+  <!-- Call -->
+  <record id="asterisk_plus_call_user" model="ir.model.access">
+    <field name="name">asterisk_plus_call_user</field>
+    <field name="model_id" ref="asterisk_plus.model_asterisk_plus_call"/>
+    <field name="group_id" ref="asterisk_plus.group_asterisk_user"/>
+    <field name="perm_read" eval="1"/>
+    <field name="perm_write" eval="1"/>
+    <field name="perm_create" eval="1"/>
+    <field name="perm_unlink" eval="0"/>
+  </record>
+
+  <!-- Call Events -->
+  <record id="asterisk_plus_call_event_user" model="ir.model.access">
+    <field name="name">asterisk_plus_call_event_user</field>
+    <field name="model_id" ref="asterisk_plus.model_asterisk_plus_call_event"/>
+    <field name="group_id" ref="asterisk_plus.group_asterisk_user"/>
+    <field name="perm_read" eval="1"/>
+    <field name="perm_write" eval="0"/>
+    <field name="perm_create" eval="0"/>
+    <field name="perm_unlink" eval="0"/>
+  </record>
+
+  <record id="asterisk_plus_set_notes_wizard_user" model="ir.model.access">
+    <field name="name">asterisk_plus_set_notes_wizard_admin</field>
+    <field name="model_id" ref="asterisk_plus.model_asterisk_plus_set_notes_wizard"/>
+    <field name="group_id" ref="asterisk_plus.group_asterisk_user"/>
+    <field name="perm_read" eval="1"/>
+    <field name="perm_write" eval="1"/>
+    <field name="perm_create" eval="1"/>
+    <field name="perm_unlink" eval="1"/>
+  </record>
+
+  <record id="asterisk_plus_call_wizard_user" model="ir.model.access">
+    <field name="name">asterisk_plus_call_wizard_user</field>
+    <field name="model_id" ref="model_asterisk_plus_call_wizard"/>
+    <field name="group_id" ref="asterisk_plus.group_asterisk_user"/>
+    <field name="perm_read" eval="1"/>
+    <field name="perm_write" eval="1"/>
+    <field name="perm_create" eval="1"/>
+    <field name="perm_unlink" eval="1"/>
+  </record>
+
+  <!-- Tags -->
+  <record id="asterisk_plus_tag_user" model="ir.model.access">
+    <field name="name">asterisk_plus_tag_user</field>
+    <field name="model_id" ref="model_asterisk_plus_tag"/>
+    <field name="group_id" ref="asterisk_plus.group_asterisk_user"/>
+    <field name="perm_read" eval="1"/>
+    <field name="perm_write" eval="1"/>
+    <field name="perm_create" eval="1"/>
+    <field name="perm_unlink" eval="1"/>
+  </record>
+
+  <!-- Settings -->
+  <record id="asterisk_settings_user" model="ir.model.access">
+    <field name="name">asterisk_settings_user</field>
+    <field name="model_id" ref="asterisk_plus.model_asterisk_plus_settings"/>
+    <field name="group_id" ref="asterisk_plus.group_asterisk_user"/>
+    <field name="perm_read" eval="1"/>
+    <field name="perm_write" eval="0"/>
+    <field name="perm_create" eval="0"/>
+    <field name="perm_unlink" eval="0"/>
+  </record>
+
+</odoo>

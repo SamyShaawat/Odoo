@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="asterisk_plus_call_supervisor_rule" model="ir.rule">
+        <field name="name">asterisk_plus_call_supervisor_rule</field>
+        <field name="model_id" ref="asterisk_plus.model_asterisk_plus_call"/>
+        <field name="groups" eval="[(6, 0, [ref('group_asterisk_supervisor')])]"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+    <record id="asterisk_plus_tag_supervisor_rule" model="ir.rule">
+        <field name="name">asterisk_plus_tag_supervisor_rule</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="model_id" ref="model_asterisk_plus_tag"/>
+        <field name="groups" eval="[(4, ref('asterisk_plus.group_asterisk_supervisor'))]"/>
+        <field name="domain_force">[(1,'=', 1)]</field>
+    </record>
+
+    <!-- Rule to get out of limits for supervisor as he is also in base.group_user -->
+    <record id="asterisk_plus_recording_supervisor_rule" model="ir.rule">
+        <field name="name">asterisk_plus_recording_supervisor_rule</field>
+        <field name="model_id" ref="asterisk_plus.model_asterisk_plus_recording"/>
+        <field name="groups" eval="[(6, 0, [ref('asterisk_plus.group_asterisk_supervisor')])]"/>
+        <field name="domain_force">[(1,'=', 1)]</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,37 @@
+<odoo>
+    <template id="email_not_set">
+        <t t-call="web.html_container">
+            <script language="javascript" type="text/javascript">
+                function windowClose() {
+                    window.open('','_parent','');
+                    window.close();
+                }
+            </script>            
+            <br/>
+            <div class="alert alert-danger">
+                <h4>Subscription error</h4>
+                <p>Please set your email address in user's preferences.</p>
+                <br/>
+                <a class="btn btn-danger" href="#" onclick="windowClose();">Close</a>
+            </div>
+        </t>
+    </template>
+
+    <template id="email_sent">
+        <t t-call="web.html_container">
+            <script language="javascript" type="text/javascript">
+                function windowClose() {
+                    window.open('','_parent','');
+                    window.close();
+                }
+            </script>            
+            <br/>
+            <div class="alert alert-success">
+                <h4>Subscription successful</h4>
+                <p>Your request to sign up address <t t-esc="email"/> is sent to Asterisk Plus's updates mailing list.</p>
+                <br/>
+                <a class="btn btn-success" href="#" onclick="windowClose();">Close</a>
+            </div>
+        </t>
+    </template>
+</odoo>

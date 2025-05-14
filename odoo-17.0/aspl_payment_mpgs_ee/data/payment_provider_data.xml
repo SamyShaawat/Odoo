@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="aspl_payment_mpgs_ee.payment_acquirer_mpgs" model="payment.provider">
+            <field name="name">Master Card Payment(MPGS)</field>
+            <field name="code">mpgs</field>
+            <field name="image_128" type="base64" file="aspl_payment_mpgs_ee/static/src/img/master_payment.png"/>
+             <field name="module_id" ref="base.module_aspl_payment_mpgs_ee"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="redirect_form_view_id" ref="aspl_payment_mpgs_ee.mpgs_acquirer_button"/>
+            <field name="pre_msg"><![CDATA[
+<p>You will be redirected to the Mpgs website after clicking on the payment button.</p>]]></field>
+            <field name="merchant_id">MPGS Merchant Id</field>
+            <field name="mpgs_secret_key">Key</field>
+            <field name="merchant_name">MPGS Merchant Name</field>
+            <field name="address1">Merchant Address 1</field>
+            <field name="address2">Merchant Address 2</field>
+            <field name="payment_method_ids"
+               eval="[Command.set([
+                         ref('payment.payment_method_card')
+                     ])]"/>
+        </record>
+
+  <!-- Payment methods
+        <record id="account_payment_method_mpgs_in" model="account.payment.method">
+           <field name="name">Master Card Payment(MPGS)</field>
+            <field name="code">mpgs</field>
+            <field name="payment_type">inbound</field>
+        </record> -->
+
+
+
+    </data>
+</odoo>

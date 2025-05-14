@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="asterisk_plus_user_action" model="ir.actions.server">
+    <field name="type">ir.actions.server</field>
+    <field name="name">Users</field>
+    <field name="state">code</field>
+    <field name="model_id" ref="model_asterisk_plus_user"/>
+    <field name="code">action = model.open_user_form()</field>
+  </record>
+
+  <record id="asterisk_plus_set_transport_wizard" model="ir.actions.server">
+    <field name="type">ir.actions.server</field>
+    <field name="name">Set Channel Transport</field>
+    <field name="state">code</field>
+    <field name="model_id" ref="model_asterisk_plus_user"/>
+    <field name="binding_model_id" ref="model_asterisk_plus_user"/>
+    <field name="code">action = records.set_channel_transport_wizard()</field>
+  </record>
+
+  <menuitem id="asterisk_plus_user_menu"
+            sequence="2100"
+            parent="asterisk_plus.asterisk_apps_menu"
+            name="Users"
+            action="asterisk_plus_user_action"/>
+
+  <record id="asterisk_plus_user_list" model="ir.ui.view">
+    <field name="name">asterisk_plus.user.list</field>
+    <field name="model">asterisk_plus.user</field>
+    <field name="type">tree</field>
+    <field name="arch" type="xml">
+      <tree>
+        <button name="dial_user" icon="fa-phone" type="object" string=" "/>
+        <field name="exten"/>
+        <field name="user"/>
+        <field name="phone"/>
+        <field name="channels" widget="many2many_tags"/>
+        <field name="user_call_count"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="asterisk_plus_user_form" model="ir.ui.view">
+    <field name="name">asterisk_plus.user.form</field>
+    <field name="model">asterisk_plus.user</field>
+    <field name="type">form</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+        </header>
+        <sheet>
+          <div class="oe_button_box" name="button_box">
+            <button class="oe_stat_button" icon="fa-phone"
+                    name="action_view_calls" type="object">
+                <field name="user_call_count" widget="statinfo"/>
+            </button>
+          </div>
+          <div name="title" class="oe_title">
+            <h1 class="d-flex flex-row align-items-center w-50">
+              <label class="oe_edit_only" for="exten"/>
+              <field name="exten" placeholder="Number..." required="1"
+                    class="d-flex flex-row w-50" widget="originate_call"/>
+            </h1>
+          </div>
+          <group>
+            <group>
+              <field invisible="1" name="id"/>
+              <field invisible="1" name="generate_sip_peers"/>
+              <field invisible="1" name="server"/>
+              <field name="user" placeholder="Odoo user..." required="1"/>
+            </group>
+            <group>
+              <field name="phone" class="d-flex flex-row w-50"  widget="originate_call" placeholder="User phone..."/>
+              <field name="mobile" class="d-flex flex-row w-50" widget="originate_call" placeholder="User mobile..."/>
+            </group>
+          </group>
+          <notebook>
+            <page name="channels" string="Channels">
+              <div class="d-flex">
+                <div class="p-2 me-5">
+                  <span>Channels</span>
+                </div>
+                <div class="p-2">
+                  <field name="channels" select="0" mode="tree"
+                    domain="[('asterisk_user', '=', active_id)]"
+                    context="{'default_asterisk_user': active_id}">
+                    <tree name="channels" editable="bottom">
+                      <field name="sequence" widget="handle"/>
+                      <field name="name" placeholder="PJSIP/101"/>
+                      <field name="sip_password"
+                        column_invisible="parent.generate_sip_peers == False"/>
+                      <field name="sip_transport"
+                        column_invisible="parent.generate_sip_peers == False"/>
+                      <field name="originate_context"/>
+                      <field name="originate_enabled" widget="boolean_toggle"/>
+                      <field name="auto_answer_header"/>
+                    </tree>
+                    <form>
+                      <sheet>
+                        <group>
+                          <group>
+                            <field name="name"/>
+                          </group>
+                          <group>
+                            <field name="originate_context"/>
+                            <field name="originate_enabled"/>
+                            <field name="auto_answer_header"/>
+                          </group>
+                        </group>
+                      </sheet>
+                    </form>
+                  </field>
+                </div>
+              </div>
+              <group>
+                <group>
+                  <field name="originate_vars"/>
+                </group>
+              </group>
+            </page>
+            <page name="settings" string="Settings">
+              <group>
+                <group>
+                  <field name="missed_calls_notify"/>
+                  <field name="open_reference"/>
+                </group>
+                <group>
+                  <field name="call_popup_is_enabled"/>
+                  <field name="call_popup_is_sticky"/>
+                </group>
+              </group>
+            </page>
+          </notebook>
+        </sheet>
+        <div class="oe_chatter">
+          <field name="message_follower_ids" widget="mail_followers"/>
+          <field name="message_ids" widget="mail_thread"/>
+        </div>
+      </form>
+    </field>
+  </record>
+
+  <record id="asterisk_plus_user_user_form" model="ir.ui.view">
+    <field name="name">asterisk_plus.user.user.form</field>
+    <field name="model">asterisk_plus.user</field>
+    <field name="type">form</field>
+    <field name="priority" eval="100"/>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+        </header>
+        <sheet>
+          <div name="title" class="oe_title">
+            <h1>
+              <field name="exten" placeholder="Number..."
+                required="1" readonly="1"
+                widget="originate_call"/>
+            </h1>
+            <h2>
+              <field name="user" readonly="1"/>
+            </h2>
+          </div>
+          <field invisible="1" name="id"/>
+          <notebook>
+            <page name="originate" string="Originate">
+              <group>
+                <field name="channels" select="0" mode="tree"
+                  domain="[('asterisk_user', '=', active_id)]"
+                  context="{'default_asterisk_user': active_id}">
+                  <tree name="channels" editable="bottom">
+                    <field name="name" placeholder="PJSIP/101"/>
+                    <field name="originate_enabled" widget="boolean_toggle"/>
+                    <field name="auto_answer_header"/>
+                  </tree>
+                  <form>
+                    <sheet>
+                      <group>
+                        <group>
+                          <field name="name"/>
+                          <field name="auto_answer_header"/>
+                        </group>
+                        <group>
+                          <field name="originate_enabled"/>
+                        </group>
+                      </group>
+                    </sheet>
+                  </form>
+                </field>
+              </group>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+
+    </field>
+  </record>
+
+  <record id="asterisk_plus_user_search" model="ir.ui.view">
+    <field name="name">asterisk_plus.user.search</field>
+    <field name="model">asterisk_plus.user</field>
+    <field name="type">search</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="exten"/>
+        <field name="user"/>
+        <field name="channels"/>
+      </search>
+    </field>
+  </record>
+</odoo>

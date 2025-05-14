@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="asterisk_plus_server_action" model="ir.actions.server">
+      <field name="name">Server</field>
+      <field name="model_id" ref="model_asterisk_plus_server"/>
+      <field name="state">code</field>
+      <field name="code">action = model.open_server_form()</field>
+  </record>
+
+  <menuitem id="asterisk_plus_server_menu"
+            sequence="300"
+            parent="asterisk_plus.asterisk_settings_menu"
+            name="Server"
+            action="asterisk_plus_server_action"/>
+
+  <record model="ir.ui.view" id="asterisk_plus_server_form">
+      <field name="name">asterisk_plus_server_form</field>
+      <field name="model">asterisk_plus.server</field>
+      <field name="arch" type="xml">
+          <form create="false">
+              <header>
+                  <button type="object" string="Reload" class="btn-primary" 
+                      icon="fa-refresh" name="reload_action"/>
+                  <button type="object" string="Agent Ping"
+                      icon="fa-check" name="ping_agent"/>
+                  <button type="object" string="Asterisk Ping"
+                      icon="fa-link" name="asterisk_ping"/>
+                  <field name="subscription_status" widget="statusbar"/>
+              </header>
+              <sheet>
+                <field name="is_module_update" invisible="1"/>
+                <widget name="web_ribbon" text="New version available!" bg_color="bg-primary"
+                  invisible="is_module_update != True"/>
+                <div class="oe_button_box" name="button_box">
+                </div>
+                <div class="oe_title" name="title">
+                  <label for="name" class="oe_edit_only"/>
+                  <h1><field name="name"/></h1>
+                  <div invisible="is_module_update != True">
+                    <small><field name="market_download_link" nolabel="1"/></small>
+                  </div>
+                </div>
+                <notebook>
+                  <page name="settings" string="Settings">
+                    <group>
+                      <group string="Asterisk Server">
+                        <field name="auto_create_pbx_users"/>
+                        <field name="sip_peer_start_exten" invisible="auto_create_pbx_users == False"/>
+                        <field name="generate_sip_peers"/>
+                        <field name="sip_peer_transport" invisible="generate_sip_peers == False"/>
+                        <field name="sip_peer_template" invisible="generate_sip_peers == False"/>
+                        <field name="sip_protocol" invisible="generate_sip_peers == False"/>
+                        <field name="security_token" invisible="generate_sip_peers == False"/>                        
+                      </group>
+                      <group string="Localization">
+                        <field name="country_id"/>
+                        <field name="tz"/>
+                      </group>
+                    </group>
+                  </page>
+                  <page name="doc" string="Agent">
+                    <group>
+                      <group>
+                        <field name="agent_initialized"/>
+                      </group>
+                      <group>
+                        <field name="agent_initialization_open" />
+                      </group>
+                    </group>
+                    <div>
+                    <p>
+The Asterisk Plus Agent must be installed on the Asterisk server in order to connect Asterisk and Odoo.
+The preferred way to install and run agent is to use our docker distribution. 
+The setup is automated. First you need to initialize the Agent's configuration by pointing it to your Odoo
+instance where Asterisk Plus module has just been installed. Below is an example that should be adjusted to
+your environment:
+<pre>
+ # Create an empty file otherwise docker will create a directory instead of a file.
+touch /etc/asterisk_plus_agent.yaml &amp;&amp; docker run --rm --volume /etc/asterisk:/etc/asterisk --volume /var/run/asterisk:/var/run/asterisk  \
+  --volume /etc/asterisk_plus_agent.yaml:/etc/asterisk_plus_agent.yaml --network=host \
+  odoopbx/agent:latest init http://localhost:8069
+</pre>
+Replace localhost:8069 to your Odoo instance WEB URL and run the commands above. 
+You must get config.yaml file located in the current directory.
+We map /etc/asterisk folder so that initialization procedure can place AMI account under /etc/asterisk/manager.conf.d
+and /var/run/asterisk so that it can connect to the running Asterisk to check the configuration.
+Now use the following command to run the Agent:
+<pre>
+docker run -d --name agent  --restart=unless-stopped \
+  --volume /etc/asterisk_plus_agent.yaml:/etc/asterisk_plus_agent.yaml \
+  --volume /var/spool/asterisk:/var/spool/asterisk \
+  --network=host odoopbx/agent run
+</pre>
+Check the logs:
+<pre>
+docker logs agent
+</pre>
+Now you can Ping the Agent and Asterisk. You can reload the page and make sure Agent Initialized checkbox is set.
+If you ever need to re-initialize the Agent unset it and repeat the procedure.
+<br/><br/>
+<strong>
+<p class="text-warning">If you need any assistance in Agent setup feel free to submit a free support ticket at our <a href="https://odoopbx.com/helpdesk">Helpdesk</a>.</p>
+</strong>
+                    </p>
+                    </div>
+                  </page>
+                </notebook>
+              </sheet>
+          </form>
+      </field>
+  </record>
+
+</odoo>

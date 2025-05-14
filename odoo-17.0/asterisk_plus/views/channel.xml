@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="asterisk_plus_channel_list" model="ir.ui.view">
+      <field name="name">asterisk.plus.channel.list</field>
+      <field name="model">asterisk_plus.channel</field>
+      <field name="arch" type="xml">
+          <tree edit="false" create="false" duplicate="false">
+            <field name="exten"/>
+            <field name="state"/>
+            <field name="callerid_num"/>
+            <field name="callerid_name"/>
+            <field name="connected_line_num"/>
+            <field name="connected_line_name"/>
+            <field name="cause"/>
+            <field name="cause_txt"/>
+            <field name="event_time"/>
+            <field name="channel"/>
+            <field name="parent_channel"/>
+            <field name="call"/>
+            <field name="user"/>
+          </tree>
+      </field>
+    </record>
+
+    <record id="asterisk_plus_channel_search" model="ir.ui.view">
+    <field name="name">asterisk.plus.channel.search</field>
+    <field name="model">asterisk_plus.channel</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="channel"/>
+        <field name="event_time"/>
+        <field name="exten"/>
+        <field name="user"/>
+        <field name="callerid_num"/>
+        <field name="callerid_name"/>
+        <field name="app"/>
+        <field name="uniqueid"/>
+      </search>
+    </field>
+    </record>
+
+    <record id="asterisk_plus_channel_form" model="ir.ui.view">
+        <field name="name">asterisk_plus.channel.form</field>
+        <field name="model">asterisk_plus.channel</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form create='0' edit='0' duplicate='0'>
+                <header></header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    </div>
+                    <group>
+                        <group>
+                            <field name="call"/>
+                            <field name="user"/>
+                            <field name="server" />
+                            <field name="event_time"/>
+                            <field name="hangup_date"/>
+                            <field name="cause"/>
+                            <field name="cause_txt"/>
+                            <field name="timestamp"/>
+                            <field name="exten"/>
+                            <field name="callerid_num"/>
+                            <field name="callerid_name"/>
+                            <field name="connected_line_num"/>
+                            <field name="connected_line_name"/>
+                        </group>
+                        <group>
+                            <field name="channel"/>
+                            <field name="channel_short"/>
+                            <field name="parent_channel"/>
+                            <field name="uniqueid"/>
+                            <field name="linkedid"/>
+                            <field name="context"/>
+                            <field name="state"/>
+                            <field name="state_desc"/>
+                            <field name="system_name"/>
+                            <field name="accountcode"/>
+                            <field name="priority"/>
+                            <field name="app_data"/>
+                            <field name="language"/>
+                            <field name="event"/>
+                        </group>
+                    </group>
+                    <group>
+                      <field name="channel_data">
+                        <tree>
+                          <field name="key"/>
+                          <field name="value"/>
+                        </tree>
+                      </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="asterisk_plus_channel_action" model="ir.actions.act_window">
+      <field name="name">Channels</field>
+      <field name="res_model">asterisk_plus.channel</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_ids" eval="[
+        (5, 0, 0),
+        (0, 0, {
+            'view_mode': 'tree',
+            'view_id': ref('asterisk_plus.asterisk_plus_channel_list'),
+            }),
+        (0, 0, {
+            'view_mode': 'form',
+            'view_id': ref('asterisk_plus.asterisk_plus_channel_form'),
+            }),
+        ]"/>
+      <field name="domain">[]</field>
+    </record>
+
+    <menuitem id="asterisk_plus_channel_menu"
+              sequence="200"
+              parent="asterisk_plus_debug_menu"
+              name="Channels"
+              action="asterisk_plus_channel_action"/>
+
+</odoo>
