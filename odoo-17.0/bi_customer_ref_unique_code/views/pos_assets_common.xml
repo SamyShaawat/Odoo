@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <template id="bi_customer_ref_unique_code_assets" inherit_id="point_of_sale.assets">
-        <xpath expr="." position="inside">
-            <script type="text/javascript" src="/bi_customer_ref_unique_code/static/src/js/models.js"/>
-            <script type="text/javascript" src="/bi_customer_ref_unique_code/static/src/js/db.js"/>
-        </xpath>
-    </template>
-</odoo>

@@ -1,9 +1,0 @@
-<odoo>
-    <record id="sequence_unique_code" model="ir.sequence">
-        <field name="name">Unique Code Sequence</field>
-        <field name="code">unique.code.sequence</field>
-        <field name="prefix">CUST</field>
-        <field name="padding">5</field>
-        <field eval="1" name="number_increment"/>
-    </record>
-</odoo>

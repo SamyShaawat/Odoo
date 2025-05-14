@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_expense_type,expense_type,model_expense_type,,1,1,1,1
-access_quick_transations,quick_transations,model_quick_transations,,1,1,1,1

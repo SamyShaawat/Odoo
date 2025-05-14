@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_website_data_feeds,access_website_data_feeds,model_website_data_feeds,,1,1,1,1
-access_generatefeeds_live_feeds,generatefeeds_live_feeds,model_generatefeeds_live_feeds,,1,1,1,1
