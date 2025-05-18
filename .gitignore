@@ -1,6 +1,6 @@
-/git_commands.txt/
-/git_cheatsheet.pdf/
-
+/git_commands.txt
+/git_cheatsheet.pdf
+/.idea
 # KEEP these specific folders
 !odoo-17.0/real_state/
 !odoo-17.0/real_state/**
