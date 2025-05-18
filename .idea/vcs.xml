@@ -2,33 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/Amic" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/Gamar" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/Mohamedhossamm" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/Restaurants" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/agial_17" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/agial_website" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/alokai-odoo" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/clinics_17" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/curvy_17" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/custom_account" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/custom_hr" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/custom_stock" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/customized_account" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/egy_17" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/home_care17" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/medical_insurance" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/nexta_v2" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/odoo_custom_dashboard" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/popup" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/pos_custom_report" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/product_expiration_date_17" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/reap_medical" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/rest-framework" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/ris_17" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/tabby-test-v17" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/tele_rad" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/timer_widget" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/odoo-17.0/website_agial" vcs="Git" />
   </component>
 </project>
