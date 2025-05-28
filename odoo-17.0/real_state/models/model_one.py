@@ -3,7 +3,7 @@
 from odoo import models, fields, api, _
 
 
-class RealState(models.Model):
+class ModelOne(models.Model):
     _name = "model.one"
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = "Model One"
