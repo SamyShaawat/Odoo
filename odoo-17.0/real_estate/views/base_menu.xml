@@ -3,6 +3,7 @@
             id="real_estate_root_menu"
             name="Real EState"
             web_icon="real_estate,static/description/icon.png"
+            sequence="1"
     />
     <menuitem
             id="properties_menu"
