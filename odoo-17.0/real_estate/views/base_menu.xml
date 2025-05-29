@@ -1,0 +1,12 @@
+<odoo>
+    <menuitem
+            id="real_estate_root_menu"
+            name="Real EState"
+            web_icon="real_estate,static/description/icon.png"
+    />
+    <menuitem
+            id="properties_menu"
+            name="Properties"
+            parent="real_estate_root_menu"
+    />
+</odoo>

@@ -8,18 +8,20 @@
                 <field name="date_availability"/>
                 <field name="selling_price"/>
                 <field name="garden"/>
+                <field name="facades"/>
+                <field name="garden_area"/>
             </tree>
         </field>
 
     </record>
     <record id="property_action" model="ir.actions.act_window">
-        <field name="name">Property</field>
+        <field name="name">property action</field>
         <field name="res_model">property</field>
         <field name="view_mode">tree,form</field>
     </record>
     <menuitem
             id="property_menu_item"
-            name="Property"
+            name="Properties"
             parent="properties_menu"
             action="property_action"/>
 
