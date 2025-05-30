@@ -1,7 +1,7 @@
 <odoo>
     <menuitem
             id="real_estate_root_menu"
-            name="Real EState"
+            name="Real Estate"
             web_icon="real_estate,static/description/icon.png"
             sequence="1"
     />

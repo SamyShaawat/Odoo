@@ -7,17 +7,54 @@
                 <field name="name"/>
                 <field name="date_availability"/>
                 <field name="selling_price"/>
-                <field name="garden"/>
-                <field name="garage" optional="1"/>
                 <field name="facades"/>
                 <field name="garden_area"/>
                 <field name="bedrooms" optional="1"/>
+                <field name="garden"/>
+                <field name="garage" optional="1"/>
             </tree>
         </field>
-
     </record>
+
+    <record id="property_view_form" model="ir.ui.view">
+        <field name="name">property form</field>
+        <field name="model">property</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="General Information">
+                            <field name="date_availability"/>
+                            <field name="postcode"/>
+                            <field name="expected_price"/>
+                            <field name="selling_price"/>
+                            <field name="bedrooms"/>
+                            <field name="living_area"/>
+                            <field name="facades"/>
+                        </group>
+                        <group string="Additional Information">
+                            <field name="garden_area"/>
+                            <field name="garage"/>
+                            <field name="garage"/>
+                            <field name="garden_orientation"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
     <record id="property_action" model="ir.actions.act_window">
-        <field name="name">property action</field>
+        <field name="name">Property</field>
         <field name="res_model">property</field>
         <field name="view_mode">tree,form</field>
     </record>
