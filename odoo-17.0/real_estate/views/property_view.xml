@@ -31,7 +31,7 @@
                     </div>
                     <group>
                         <group string="General Information">
-                            <field name="date_availability"/>
+                            <field name="date_availability" required="1"/>
                             <field name="postcode"/>
                             <field name="expected_price"/>
                             <field name="selling_price"/>
@@ -46,7 +46,7 @@
                             <field name="garden_orientation"/>
                         </group>
                         <group>
-                            <field name="description"/>
+                            <field name="description" required="1"/>
                         </group>
                     </group>
                 </sheet>
