@@ -6,7 +6,7 @@ from odoo.exceptions import ValidationError
 class Property(models.Model):
     _name = "property"
     _description = "Property"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    # _inherit = ["mail.thread", "mail.activity.mixin"]
 
     name = fields.Char(string="", required=True, default="property", size=10)
     description = fields.Text(string="")
@@ -36,3 +36,28 @@ class Property(models.Model):
         for rec in self:
             if rec.bedrooms == 0:
                 raise ValidationError("The number of bedrooms cannot be Zero.")
+
+    @api.model_create_multi
+    def create(self, vals):
+        res = super(Property, self).create(vals)
+        # or res = super().create(self,vals)
+        print("inside create method of property model")
+        return res
+
+    @api.model
+    def _search(self, domain, offset=0, limit=None, order=None, access_rights_uid=None):
+        res = super(Property, self)._search(domain, offset=0, limit=None, order=None, access_rights_uid=None)
+        print("inside search method of property model")
+        return res
+
+    def write(self, vals):
+        res = super(Property, self).write(vals)
+        # or res = super().write(self, vals)
+        print("inside write method of property model")
+        return res
+
+    def unlink(self):
+        res = super(Property, self).unlink()
+        # or res = super().unlink(self)
+        print("inside unlink method of property model")
+        return res
