@@ -5,6 +5,7 @@
         <field name="arch" type="xml">
             <tree string="Property List">
                 <field name="name"/>
+                <field name="postcode"/>
                 <field name="date_availability"/>
                 <field name="selling_price"/>
                 <field name="facades"/>
@@ -41,7 +42,7 @@
                         <group string="Additional Information">
                             <field name="garden_area"/>
                             <field name="garage"/>
-                            <field name="garage"/>
+                            <field name="garden"/>
                             <field name="garden_orientation"/>
                         </group>
                         <group>
@@ -50,6 +51,24 @@
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="property_view_search" model="ir.ui.view">
+        <field name="name">property search</field>
+        <field name="model">property</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="postcode"/>
+
+                <filter name="is_garden" string="With Garden" domain="[('garden','=',True)]"/>
+                <filter name="is_not_garden" string="Without Garden" domain="[('garden','=',False)]"/>
+                <filter name="is_garage" string="With Garage" domain="[('garage','=',False)]"/>
+
+
+                <filter name="group_garden" string="Garden" context="{'group_by':'garden'}"/>
+            </search>
         </field>
     </record>
 
