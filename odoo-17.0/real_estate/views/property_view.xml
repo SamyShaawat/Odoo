@@ -35,11 +35,11 @@
                             <field name="postcode"/>
                             <field name="expected_price"/>
                             <field name="selling_price"/>
-                            <field name="bedrooms"/>
                             <field name="living_area"/>
                             <field name="facades"/>
                         </group>
                         <group string="Additional Information">
+                            <field name="bedrooms"/>
                             <field name="garden_area"/>
                             <field name="garage"/>
                             <field name="garden"/>

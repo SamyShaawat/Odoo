@@ -1,7 +1,9 @@
 {
     "name": "Real Estate",
     "version": "17.0.1.0.0",
-    "category": "Extra Tools",
+    "category": "Custom Apps",
+    'summary': 'Real Estate Management',
+    'description': 'Manage properties, offers, buyers, sellers. Custom app for real estate workflows.',
     "author": "Samy Mostafa Shaawat",
     "depends": [
         "base",
