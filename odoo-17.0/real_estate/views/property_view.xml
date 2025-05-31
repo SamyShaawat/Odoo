@@ -21,7 +21,7 @@
         <field name="name">property form</field>
         <field name="model">property</field>
         <field name="arch" type="xml">
-            <form>
+            <form create="1" edit="1" delete="1">
                 <sheet>
                     <div class="oe_title">
                         <label for="name"/>
