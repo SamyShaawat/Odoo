@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_property,access.property,model_property,,1,1,1,1
 access_owner,access.owner,model_owner,,1,1,1,1
+access_tag,access.tag,model_tag,,1,1,1,1

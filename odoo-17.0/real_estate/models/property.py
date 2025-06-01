@@ -27,6 +27,7 @@ class Property(models.Model):
         ("west", "West"),
     ], string="", default="north")
     owner_id = fields.Many2one("owner", string="", required=True)
+    tag_ids = fields.Many2many("tag", string="")
 
     _sql_constraints = [
         ('unique_name', 'unique("name")', 'This name is existing, please choose another one.'),

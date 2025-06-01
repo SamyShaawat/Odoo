@@ -14,6 +14,7 @@
                 <field name="bedrooms" optional="1"/>
                 <field name="garden"/>
                 <field name="garage" optional="1"/>
+                <field name="tag_ids"/>
             </tree>
         </field>
     </record>
@@ -46,6 +47,7 @@
                             <field name="garage"/>
                             <field name="garden"/>
                             <field name="garden_orientation"/>
+                            <field name="tag_ids" widget="many2many_tags"/>
                         </group>
                         <group>
                             <field name="description" required="1"/>

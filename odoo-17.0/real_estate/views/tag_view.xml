@@ -1,19 +1,17 @@
 <odoo>
-    <record id="owner_view_tree" model="ir.ui.view">
-        <field name="name">owner tree</field>
-        <field name="model">owner</field>
+    <record id="tag_view_tree" model="ir.ui.view">
+        <field name="name">tag tree</field>
+        <field name="model">tag</field>
         <field name="arch" type="xml">
-            <tree string="Owner List" multi_edit="1">
+            <tree string="Tag List" multi_edit="1">
                 <field name="name"/>
-                <field name="phone"/>
-                <field name="address"/>
             </tree>
         </field>
     </record>
 
-    <record id="owner_view_form" model="ir.ui.view">
-        <field name="name">owner form</field>
-        <field name="model">owner</field>
+    <record id="tag_view_form" model="ir.ui.view">
+        <field name="name">tag form</field>
+        <field name="model">tag</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
@@ -25,13 +23,10 @@
                     </div>
                     <group>
                         <group>
-                            <field name="phone"/>
+                            <!--                            <field name="phone"/>-->
                         </group>
                         <group>
-                            <field name="address"/>
-                        </group>
-                        <group>
-                            <field name="property_ids" widget="many2many_tags"/>
+                            <!--                            <field name="address"/>-->
                         </group>
                     </group>
                 </sheet>
@@ -39,13 +34,12 @@
         </field>
     </record>
 
-    <record id="owner_view_search" model="ir.ui.view">
-        <field name="name">owner search</field>
-        <field name="model">owner</field>
+    <record id="tag_view_search" model="ir.ui.view">
+        <field name="name">tag search</field>
+        <field name="model">tag</field>
         <field name="arch" type="xml">
             <search>
                 <field name="name"/>
-                <field name="phone"/>
 
                 <!--                <filter name="is_garden" string="With Garden" domain="[('garden','=',True)]"/>-->
                 <!--                <filter name="group_garden" string="Garden" context="{'group_by':'garden'}"/>-->
@@ -53,15 +47,15 @@
         </field>
     </record>
 
-    <record id="owner_action" model="ir.actions.act_window">
-        <field name="name">Owner</field>
-        <field name="res_model">owner</field>
+    <record id="tag_action" model="ir.actions.act_window">
+        <field name="name">Tag</field>
+        <field name="res_model">tag</field>
         <field name="view_mode">tree,form</field>
     </record>
 
     <menuitem
-            id="owner_menu_item"
-            name="Owners"
+            id="tag_menu_item"
+            name="Tags"
             parent="configuration_menu"
-            action="owner_action"/>
+            action="tag_action"/>
 </odoo>
