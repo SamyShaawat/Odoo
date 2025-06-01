@@ -5,6 +5,7 @@
         <field name="arch" type="xml">
             <tree string="Property List" multi_edit="1" create="1" edit="1" delete="1">
                 <field name="name"/>
+                <field name="owner_id"/>
                 <field name="postcode"/>
                 <field name="date_availability"/>
                 <field name="selling_price"/>
@@ -31,7 +32,7 @@
                     </div>
                     <group>
                         <group string="General Information">
-                            <field name="date_availability" required="1"/>
+                            <field name="owner_id"/>
                             <field name="postcode"/>
                             <field name="expected_price"/>
                             <field name="selling_price"/>
@@ -39,6 +40,7 @@
                             <field name="facades"/>
                         </group>
                         <group string="Additional Information">
+                            <field name="date_availability" required="1"/>
                             <field name="bedrooms"/>
                             <field name="garden_area"/>
                             <field name="garage"/>
@@ -68,6 +70,7 @@
 
 
                 <filter name="group_garden" string="Garden" context="{'group_by':'garden'}"/>
+                <filter name="group_owner" string="Owner" context="{'group_by':'owner_id'}"/>
             </search>
         </field>
     </record>

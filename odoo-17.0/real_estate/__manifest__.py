@@ -21,6 +21,7 @@
     "data": [
         "views/base_menu.xml",
         "views/property_view.xml",
+        "views/owner_view.xml",
         "security/ir.model.access.csv"
     ],
     "installable": True,

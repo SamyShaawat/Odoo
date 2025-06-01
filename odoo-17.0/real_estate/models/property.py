@@ -5,10 +5,10 @@ from odoo.exceptions import ValidationError
 
 class Property(models.Model):
     _name = "property"
-    _description = "Property"
+    _description = "Property Model"
     # _inherit = ["mail.thread", "mail.activity.mixin"]
 
-    name = fields.Char(string="", required=True, default="property", size=10)
+    name = fields.Char(string="", required=True, default="property", size=12)
     description = fields.Text(string="")
     postcode = fields.Char(string="", required=True)
     date_availability = fields.Date(string="", required=True, default=fields.Date.context_today)
@@ -26,6 +26,7 @@ class Property(models.Model):
         ("east", "East"),
         ("west", "West"),
     ], string="", default="north")
+    owner_id = fields.Many2one("owner", string="", required=True)
 
     _sql_constraints = [
         ('unique_name', 'unique("name")', 'This name is existing, please choose another one.'),
