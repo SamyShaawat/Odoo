@@ -16,7 +16,8 @@
         "account",
         "account_accountant",
         "crm",
-        "purchase"
+        "purchase",
+        "web_studio"
     ],
     "data": [
         "views/base_menu.xml",

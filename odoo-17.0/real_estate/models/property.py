@@ -27,7 +27,12 @@ class Property(models.Model):
         ("west", "West"),
     ], string="", default="north")
     owner_id = fields.Many2one("owner", string="", required=True)
-    tag_ids = fields.Many2many("tag", string="")
+    tag_ids = fields.Many2many("tag", string="Tags")
+    state = fields.Selection([
+        ("draft", "Draft"),
+        ("pending", "Pending"),
+        ("sold", "Sold"),
+    ], string="", default="draft")
 
     _sql_constraints = [
         ('unique_name', 'unique("name")', 'This name is existing, please choose another one.'),
@@ -63,3 +68,18 @@ class Property(models.Model):
         # or res = super().unlink(self)
         print("inside unlink method of property model")
         return res
+
+    def action_draft(self):
+        for rec in self:
+            rec.state = "draft"
+        # return True
+
+    def action_pending(self):
+        for rec in self:
+            rec.state = "pending"
+        # return True
+
+    def action_sold(self):
+        for rec in self:
+            rec.state = "sold"
+        # return True

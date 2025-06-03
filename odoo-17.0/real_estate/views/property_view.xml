@@ -8,6 +8,7 @@
                 <field name="owner_id"/>
                 <field name="postcode"/>
                 <field name="date_availability"/>
+                <field name="state"/>
                 <field name="selling_price"/>
                 <field name="facades"/>
                 <field name="garden_area"/>
@@ -25,6 +26,17 @@
         <field name="arch" type="xml">
             <form create="1" edit="1" delete="1">
                 <sheet>
+                    <header>
+                        <button name="action_draft" type="object" string="Set to Draft" class="oe_highlight"
+                                invisible="state == 'draft'"/>
+                        <button name="action_pending" type="object" string="Pending" class="btn-secondary"
+                                invisible="state != 'draft'"/>
+                        <button name="action_sold" type="object" string="Mark as Sold" class="btn-success"
+                                invisible="state != 'pending'"/>
+
+                        <field name="state" widget="statusbar" statusbar_visible="draft,pending,sold"
+                               options="{'clickable': 1}"/>
+                    </header>
                     <div class="oe_title">
                         <label for="name"/>
                         <h1>
